@@ -99,9 +99,10 @@ jobs:
         run: npx hexo generate
 
       - name: Deploy to GitHub Pages
-        working-directory: ./blog
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # Hexo outputs the generated files to the 'public' directory
+          publish_dir: ./blog/public  # Hexo outputs the generated files to the 'public' directory
+          publish_branch: main
+          publish_repo: yumis56/is373-project
 
