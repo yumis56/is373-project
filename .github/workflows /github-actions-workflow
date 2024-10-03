@@ -34,7 +34,7 @@ jobs:
 
     
       - name: Start Hexo server
-        run: |
+        run: 
           npx hexo server &
           echo $! > hexo.pid
 
