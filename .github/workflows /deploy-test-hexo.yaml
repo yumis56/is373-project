@@ -30,8 +30,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
 
-
-
     - name: Trigger tests in is373-devops
       uses: peter-evans/repository-dispatch@v3
       with:
