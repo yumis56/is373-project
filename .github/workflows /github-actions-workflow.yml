@@ -26,26 +26,26 @@ jobs:
 
   
       - name: Install dependencies
-        #working-directory: ./blog
+        working-directory: ./blog
         run: |
             npm install
             npm ci
 
 
       - name: Generate Hexo site
-        #working-directory: ./blog
+        working-directory: ./blog
         run: npx hexo generate
 
     
       - name: Start Hexo server
-        #working-directory: ./blog
+        working-directory: ./blog
         run: 
           npx hexo server &
           echo $! > hexo.pid
 
   
       - name: Wait for Hexo server to start
-        #working-directory: ./blog
+        working-directory: ./blog
         run: npx wait-on http://localhost:5000
 
     
@@ -70,7 +70,7 @@ jobs:
 
      
       - name: Stop Hexo server
-        #working-directory: ./blog
+        working-directory: ./blog
         if: always()
         run: |
           kill $(cat hexo.pid)
@@ -91,11 +91,11 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        #working-directory: ./blog
+        working-directory: ./blog
         run: npm ci
 
       - name: Generate Hexo site
-        #working-directory: ./blog
+        working-directory: ./blog
         run: npx hexo generate
         
         #name: List contents of publish directory
