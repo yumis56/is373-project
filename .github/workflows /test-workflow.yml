@@ -2,9 +2,7 @@ name: Test Workflow Trigger
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
