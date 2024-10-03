@@ -14,7 +14,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://yuis56.github.io/is373-project
+url: https://yumis56.github.io/is373-project
 root: is373-project
 
 #url: http://example.com
@@ -64,7 +64,7 @@ prismjs:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: /public/index.html
+  path: ''
   per_page: 10
   order_by: -date
 
