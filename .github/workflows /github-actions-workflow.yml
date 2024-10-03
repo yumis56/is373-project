@@ -64,7 +64,7 @@ jobs:
 
       - name: Run Playwright tests
         working-directory: is373-devops
-        run: npx playwright test --config=path-to-your-playwright-config
+        run: npx playwright test --config=playwright.config.ts
 
      
       - name: Stop Hexo server
