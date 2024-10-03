@@ -2,7 +2,8 @@ name: Deploy Test Hexo
 
 on:
   push:
-    branches: [ main, master ]
+    #branches: [ main, master ]
+    branches: [ temptest-actions ]
 
 jobs:
   build-and-deploy:
