@@ -26,22 +26,26 @@ jobs:
 
   
       - name: Install dependencies
+        working-directory: ./blog
         run: |
             npm install
             npm ci
 
 
       - name: Generate Hexo site
+        working-directory: ./blog
         run: npx hexo generate
 
     
       - name: Start Hexo server
+        working-directory: ./blog
         run: 
           npx hexo server &
           echo $! > hexo.pid
 
   
       - name: Wait for Hexo server to start
+        working-directory: ./blog
         run: npx wait-on http://localhost:5000
 
     
@@ -66,6 +70,7 @@ jobs:
 
      
       - name: Stop Hexo server
+        working-directory: ./blog
         if: always()
         run: |
           kill $(cat hexo.pid)
@@ -86,12 +91,15 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        working-directory: ./blog
         run: npm ci
 
       - name: Generate Hexo site
+        working-directory: ./blog
         run: npx hexo generate
 
       - name: Deploy to GitHub Pages
+        working-directory: ./blog
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
