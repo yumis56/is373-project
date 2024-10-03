@@ -97,7 +97,10 @@ jobs:
       - name: Generate Hexo site
         working-directory: ./blog
         run: npx hexo generate
-
+        
+        name: List contents of publish directory
+        run: ls -la ./blog/public 
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
