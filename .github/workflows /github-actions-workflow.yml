@@ -56,11 +56,9 @@ jobs:
         working-directory: is373-devops
         run: npm ci
 
-
       - name: Install Playwright browsers
         working-directory: is373-devops
         run: npx playwright install
-
 
       - name: Run Playwright tests
         working-directory: is373-devops
