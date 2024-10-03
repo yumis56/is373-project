@@ -1,70 +1,70 @@
-name: Test and Deploy Hexo Site
+name: 
 
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch
+      - main   
   pull_request:
     branches:
-      - main  # Trigger on pull request to the main branch
+      - main   
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the Hexo website repository
+      
       - name: Checkout Hexo repository
         uses: actions/checkout@v3
 
-      # Set up Node.js environment
+    
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'  # Specify your Node.js version
           cache: 'npm'
 
-      # Install dependencies
+  
       - name: Install dependencies
         run: npm ci
 
-      # Generate the static website
+
       - name: Generate Hexo site
         run: npx hexo generate
 
-      # Start the Hexo server in the background
+    
       - name: Start Hexo server
         run: |
           npx hexo server &
           echo $! > hexo.pid
 
-      # Wait for the Hexo server to be ready
+  
       - name: Wait for Hexo server to start
         run: npx wait-on http://localhost:4000
 
-      # Checkout the Playwright test repository
+    
       - name: Checkout Playwright test repository
         uses: actions/checkout@v3
         with:
           repository: your-username/playwright-test-repo
           path: playwright-test-repo
 
-      # Install Playwright dependencies
+   
       - name: Install Playwright dependencies
         working-directory: playwright-test-repo
         run: npm ci
 
-      # Install Playwright browsers
+
       - name: Install Playwright browsers
         working-directory: playwright-test-repo
         run: npx playwright install
 
-      # Run the Playwright tests against the running Hexo site
+
       - name: Run Playwright tests
         working-directory: playwright-test-repo
         run: npx playwright test --config=path-to-your-playwright-config
 
-      # Stop the Hexo server
+     
       - name: Stop Hexo server
         if: always()
         run: |
