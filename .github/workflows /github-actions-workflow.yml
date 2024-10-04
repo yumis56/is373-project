@@ -15,6 +15,7 @@ jobs:
     steps:
       
       - name: Checkout Hexo repository
+        working-directory: ./blog
         uses: actions/checkout@v4
 
     
@@ -75,8 +76,7 @@ jobs:
       - name: Stop Hexo server
         working-directory: ./blog
         if: always()
-        run: |
-          kill `cat hexo.pid`
+        run: cat hexo.pid | xargs kill
 
   deploy:
     runs-on: ubuntu-latest
