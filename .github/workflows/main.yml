@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         working-directory: ./blog
         run: |
-            #npm install
+            npm install
             npm ci
 
 
@@ -94,6 +94,7 @@ jobs:
       - name: Install dependencies
         working-directory: ./blog
         run: |
+            npm install
             npm ci
 
       - name: Generate Hexo site
