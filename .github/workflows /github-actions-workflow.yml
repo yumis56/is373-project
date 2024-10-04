@@ -102,8 +102,8 @@ jobs:
             npx hexo clean
             npx hexo generate
         
-        #name: List contents of publish directory
-        #run: ls -la ./blog/public 
+        name: List contents of publish directory
+        run: ls -la ./blog/public 
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
