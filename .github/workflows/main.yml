@@ -42,8 +42,7 @@ jobs:
         working-directory: ./blog
         run: |
           npx hexo server -p 5000
-          #echo $! > hexo.pid
-          HEXOPID='5000'
+          echo $! > hexo.pid
 
   
       - name: Wait for Hexo server to start
@@ -75,11 +74,8 @@ jobs:
         working-directory: ./blog
         if: always()
         run: |
-          #kill `cat hexo.pid`
-          PID=$(lsof -t -i :5000)
-          if [ -n "$PID" ]; then
-          kill $PID || true
-          fi
+          kill `cat hexo.pid`
+
 
   deploy:
     runs-on: ubuntu-latest
