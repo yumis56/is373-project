@@ -34,15 +34,15 @@ jobs:
 
       - name: Generate Hexo site
         working-directory: ./blog
-        # TODO check
-        publish_dir: ./blog/public
-        run: npx hexo generate
+        run: |
+            npx hexo clean
+            npx hexo generate
 
     
       - name: Start Hexo server
         working-directory: ./blog
-        run: 
-          npx hexo server &
+        run: |
+          npx hexo server
           echo $! > hexo.pid
 
   
@@ -98,7 +98,9 @@ jobs:
 
       - name: Generate Hexo site
         working-directory: ./blog
-        run: npx hexo generate
+        run: |
+            npx hexo clean
+            npx hexo generate
         
         #name: List contents of publish directory
         #run: ls -la ./blog/public 
