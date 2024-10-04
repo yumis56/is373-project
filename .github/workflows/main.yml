@@ -41,7 +41,7 @@ jobs:
       - name: Start Hexo server
         working-directory: ./blog
         run: |
-          npx hexo server -p 5000
+          npx hexo server -p 5000 --silent
           echo $! > hexo.pid
 
   
