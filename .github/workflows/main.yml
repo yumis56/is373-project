@@ -116,5 +116,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./blog/public  # Hexo outputs the generated files to the 'public' directory
-          publish_branch: main
-          publish_repo: yumis56/is373-project
+          publish_branch: hosted-pages
+          #publish_repo: yumis56/is373-project
