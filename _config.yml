@@ -1,0 +1,4 @@
+deploy:
+  type: git
+  repo: https://github.com/yumis56/is373-project
+  branch: main

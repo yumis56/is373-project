@@ -1,0 +1,118 @@
+name: GitHub Actions Workflow
+
+on:
+  push:
+    branches:
+      - main   
+  pull_request:
+    branches:
+      - main   
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - name: Checkout Hexo repository
+        working-directory: ./blog
+        uses: actions/checkout@v4
+
+    
+      - name: Set up Node.js
+        working-directory: ./blog
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+  
+      - name: Install dependencies
+        working-directory: ./blog
+        run: |
+            #npm install
+            npm ci
+
+
+      - name: Generate Hexo site
+        working-directory: ./blog
+        run: |
+            npx hexo clean
+            npx hexo generate
+
+    
+      - name: Start Hexo server
+        working-directory: ./blog
+        run: |
+          npx hexo server -p 5000
+          #echo $! > hexo.pid
+          hexoPID=$(lsof -t -i :5000)
+
+  
+      - name: Wait for Hexo server to start
+        working-directory: ./blog
+        run: npx wait-on http://localhost:5000
+
+    
+      - name: Checkout Playwright test repository
+        uses: actions/checkout@v4
+        with:
+          repository: yumis56/is373-devops
+          path: is373-devops
+
+   
+      - name: Install Playwright dependencies
+        working-directory: is373-devops
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: is373-devops
+        run: npx playwright install
+
+      - name: Run Playwright tests
+        working-directory: is373-devops
+        run: npx playwright test --config=playwright.config.ts
+
+     
+      - name: Stop Hexo server
+        working-directory: ./blog
+        if: always()
+        run: 
+            kill $hexoPID
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout Hexo repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        working-directory: ./blog
+        run: npm ci
+
+      - name: Generate Hexo site
+        working-directory: ./blog
+        run: |
+            npx hexo clean
+            npx hexo generate
+        
+        name: List contents of publish directory
+        run: ls -la ./blog/public 
+        
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./blog/public  # Hexo outputs the generated files to the 'public' directory
+          publish_branch: main
+          publish_repo: yumis56/is373-project
+
