@@ -61,8 +61,10 @@ jobs:
    
       - name: Install Playwright dependencies
         working-directory: is373-devops
-        run: npm ci
-
+        run: |
+          npx playwright install-deps
+          npm ci
+        
       - name: Install Playwright browsers
         working-directory: is373-devops
         run: npx playwright install
