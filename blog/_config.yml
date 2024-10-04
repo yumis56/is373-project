@@ -15,7 +15,7 @@ timezone: ''
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://yumis56.github.io/is373-project
-root: is373-project
+root: /is373-project/
 
 #url: http://example.com
 permalink: :year/:month/:day/:title/
@@ -108,4 +108,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/yumis56/is373-project
-  branch: main
+  branch: hosted-pages
