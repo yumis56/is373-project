@@ -76,7 +76,7 @@ jobs:
         working-directory: ./blog
         if: always()
         run: |
-          kill $(cat hexo.pid)
+          kill `cat hexo.pid`
 
   deploy:
     runs-on: ubuntu-latest
