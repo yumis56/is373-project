@@ -71,6 +71,7 @@ jobs:
 
       - name: Run Playwright tests
         working-directory: is373-devops
+        id: playwright-tests
         #run: npx playwright test --config=playwright.config.ts
         run: npx playwright test --config=playwright.config.ts --reporter=json > playwright-results.json || true
       
@@ -90,7 +91,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-test
-    if: github.event_name == 'push'
+    #if: github.event_name == 'push'
+    if: success() 
 
     steps:
       - name: Checkout Hexo repository
