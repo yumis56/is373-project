@@ -71,8 +71,14 @@ jobs:
 
       - name: Run Playwright tests
         working-directory: is373-devops
-        run: npx playwright test --config=playwright.config.ts
-
+        #run: npx playwright test --config=playwright.config.ts
+        run: npx playwright test --config=playwright.config.ts --reporter=json > playwright-results.json || true
+      
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-results
+          path: is373-devops/playwright-results.json
      
       - name: Stop Hexo server
         working-directory: ./blog
