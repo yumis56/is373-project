@@ -43,12 +43,13 @@ jobs:
         run: |
           npx hexo server &
           echo $! > hexo.pid
-          npx wait-on http://localhost:4000/is373-project/
+          sleep 5  # Give the server a moment to start
+          echo "Hexo server started"
   
-      #- name: Wait for Hexo server to start
-      #  working-directory: ./blog
-      #  run: |
-      # npx wait-on http://localhost:4000/is373-project/
+      - name: Wait for Hexo server to start
+        working-directory: ./blog
+        run: |
+          npx wait-on http://localhost:4000/is373-project/
 
     
       - name: Checkout Playwright test repository
