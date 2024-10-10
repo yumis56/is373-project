@@ -16,8 +16,8 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v4
         with:
-          repository: yumis56/is373
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: yumis56/is373
           path: source
       
       - name: Checkout Hexo repository
