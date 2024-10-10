@@ -13,13 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout is373 repository
-        uses: actions/checkout@v4
-        with:
-          #token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: yumis56/is373
-          path: content
-      
       - name: Checkout Hexo repository
         uses: actions/checkout@v4
         
@@ -30,12 +23,17 @@ jobs:
       #  with:
       #    repository: yumis56/is373
       #    path: is373
-      
+      - name: Checkout is373 repository
+        uses: actions/checkout@v4
+        with:
+          #token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: yumis56/is373
+          path: is373
 
       - name: Copy markdown files and images
         run: |
-          cp -R content/*.md /blog/source/_posts
-          cp -R content/images/* /blog/source/images/
+          cp -R is373/*.md /blog/source/_posts
+          cp -R is373/images/* /blog/source/images/
 
       - name: Commit and push changes
         run: |
