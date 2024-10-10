@@ -27,7 +27,6 @@ jobs:
       - name: Copy Markdown files
         run: |
           cp is373/*.md ./blog/source/_posts/
-          mkdir -p ./blog/source/images
           cp is373/images/* ./blog/source/images/
         
       - name: Set up Node.js
