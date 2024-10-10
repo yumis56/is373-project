@@ -32,8 +32,8 @@ jobs:
 
       - name: Copy markdown files and images
         run: |
-          cp -R is373/*.md /blog/source/_posts
-          cp -R is373/images/* /blog/source/images/
+          cp -R is373/*.md ./blog/source/_posts/
+          cp -R is373/images/* ./blog/source/images/
 
       - name: Commit and push changes
         run: |
