@@ -17,24 +17,24 @@ jobs:
       - name: Checkout Hexo repository
         uses: actions/checkout@v4
         
-
-      - name: Checkout post source repository
-        uses: actions/checkout@v4
-        with:
-          repository: yumis56/is373
-          path: is373
-
-      - name: Copy Markdown files
-        run: |
-          cp is373/*.md ./blog/source/_posts/
-          cp is373/images/* ./blog/source/images/
+      #TODO: may be better to have workflow in is373 instead of here
+      #- name: Checkout post source repository
+      #  uses: actions/checkout@v4
+      #  with:
+      #    repository: yumis56/is373
+      #    path: is373
+      
+      #- name: Copy Markdown files
+      #  run: |
+      #    cp is373/*.md ./blog/source/_posts/
+      #    cp is373/images/* ./blog/source/images/
         
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-  
+
       - name: Install dependencies
         working-directory: ./blog
         run: |
