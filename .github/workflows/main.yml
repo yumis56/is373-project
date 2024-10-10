@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          repository: yumis56/is373
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          path: source
       
       - name: Checkout Hexo repository
         uses: actions/checkout@v4
@@ -23,6 +29,20 @@ jobs:
       #  with:
       #    repository: yumis56/is373
       #    path: is373
+
+      - name: Copy markdown files and images
+        run: |
+          cp -R source/*.md is373-project/blog/source/_posts
+          cp -R source/images/* is373-project/blog/source/images/
+
+      - name: Commit and push changes
+        run: |
+          cd is373-project
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update website content from source-repo" || echo "No changes to commit"
+          git push
       
       #- name: Copy Markdown files
       #  run: |
