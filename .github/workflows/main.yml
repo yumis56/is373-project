@@ -18,7 +18,7 @@ jobs:
         with:
           #token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: yumis56/is373
-          path: source
+          path: is373
       
       - name: Checkout Hexo repository
         uses: actions/checkout@v4
@@ -32,8 +32,8 @@ jobs:
 
       - name: Copy markdown files and images
         run: |
-          cp -R source/*.md is373-project/blog/source/_posts
-          cp -R source/images/* is373-project/blog/source/images/
+          cp -R is373/*.md is373-project/blog/source/_posts
+          cp -R is373/images/* is373-project/blog/source/images/
 
       - name: Commit and push changes
         run: |
