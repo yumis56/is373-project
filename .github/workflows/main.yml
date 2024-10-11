@@ -11,6 +11,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    outputs:
+      playwright-tests: ${{ steps.playwright-tests.outputs.result }}
 
     steps:
       - name: Checkout Hexo repository
@@ -131,7 +133,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-test
     #if: github.event_name == 'push'
-    if: success() && env.playwright-tests == 'true'
+    if: success() && needs.build-and-test.outputs.playwright-tests == 'true'
 
     steps:
       - name: Checkout Hexo repository
