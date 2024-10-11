@@ -39,7 +39,8 @@ jobs:
           git add .
           git commit -m "Update md and images from is373 to is373-project" || echo "No changes to commit"
           git push origin main
-      
+         
+    
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
