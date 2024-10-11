@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Ubuntu Set-Up Guide   WSL2 Set-Up Tutorial for WindowsWSL: Windows Subsystem for Linux What you will need beforehand: Windows 10&#x2F;11 on virutal or physical machine Windows updated to most recent v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://yumis56.github.io/is373-project/2024/10/11/setup-ubuntu/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Ubuntu Set-Up Guide   WSL2 Set-Up Tutorial for WindowsWSL: Windows Subsystem for Linux What you will need beforehand: Windows 10&#x2F;11 on virutal or physical machine Windows updated to most recent v">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/2024/10/11/setup-ubuntu/images/ubuntu-logo.png">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/2024/10/11/setup-ubuntu/images/virtualbox-logo.png">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/2024/10/11/setup-ubuntu/images/virtualbox-logo-2024.png">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/images/blank-virtual-box.png">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/images/vm-setup-1.png">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/images/vm-setup-2.png">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/images/vm-setup-3.png">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/images/vm-setup-4.png">
+<meta property="article:published_time" content="2024-10-11T00:36:58.198Z">
+<meta property="article:modified_time" content="2024-10-11T00:36:58.198Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yumis56.github.io/is373-project/2024/10/11/setup-ubuntu/images/ubuntu-logo.png">
+  
+    <link rel="alternate" href="/is373-project/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/is373-project/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/is373-project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/is373-project/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/is373-project/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/is373-project/">Home</a>
+        
+          <a class="main-nav-link" href="/is373-project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/is373-project/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yumis56.github.io/is373-project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-setup-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/11/setup-ubuntu/" class="article-date">
+  <time class="dt-published" datetime="2024-10-11T00:36:58.198Z" itemprop="datePublished">2024-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Ubuntu-Set-Up-Guide"><a href="#Ubuntu-Set-Up-Guide" class="headerlink" title="Ubuntu Set-Up Guide"></a>Ubuntu Set-Up Guide</h1><img src="./images/ubuntu-logo.png" alt="Ubuntu Logo" width="150" />
+
+<hr>
+<h2 id="WSL2-Set-Up-Tutorial-for-Windows"><a href="#WSL2-Set-Up-Tutorial-for-Windows" class="headerlink" title="WSL2 Set-Up Tutorial for Windows"></a>WSL2 Set-Up Tutorial for Windows</h2><p>WSL: Windows Subsystem for Linux</p>
+<h3 id="What-you-will-need-beforehand"><a href="#What-you-will-need-beforehand" class="headerlink" title="What you will need beforehand:"></a>What you will need beforehand:</h3><ul>
+<li>Windows 10&#x2F;11 on virutal or physical machine</li>
+<li>Windows updated to most recent version</li>
+</ul>
+<p><strong>1. Installing WSL2</strong></p>
+<ul>
+<li>The first step to installing Ubuntu on your machine is installing WSL2 on your computer. WSL2 stands for Windows Subsystem for Linux, and it allows you to run a Linux environment on your computer without having to have a separate virtual machine.</li>
+<li>To install WSL2, you have to open Windows Terminal on your device as an adminstrator. Then enter <code> wsl --install </code>. </li>
+<li>Once it has installed, you must restart your device.</li>
+</ul>
+<p><strong>2. Installing Ubuntu</strong><br>The second step for installing Ubuntu is installing a version of Ubuntu onto WSL. We will be using a method that allows you to install Ubuntu from the command line. </p>
+<ul>
+<li>First, you must open Windows Terminal and enter <code> wsl --list --online </code> to see on the available versions of Ubuntu that you are able to install.</li>
+<li>Once you have found the version that you like, you must type the name of the version that you want and then enter the following: <code> wsl --install -d (name of installation) </code></li>
+<li>If successful, you will see a progress bar appear showing that the installation is in progress.</li>
+</ul>
+<p><strong>3. Running Ubuntu</strong><br>The final step for installing Ubuntu is running it on your machine and making sure it is functional. </p>
+<ul>
+<li>To do that, you must open Powershell terminal and type in the version of Ubuntu you installed, for example: <code> ubuntu2404.exe </code></li>
+<li>The Ubuntu terminal should start running, and if it has, then you have successfully installed Ubuntu!</li>
+<li>Once it is installed, the system will prompt you to create a username and password. Make sure to write the username and password somewhere secure so then if you forget your information, you are able to retrieve it.</li>
+<li>Optionally, you should also run updates for your Ubuntu terminal to make sure that it is up to date. You can run updates by entering the following:<br><code> sudo apt update </code><br><code> sudo apt full-upgrade -y </code></li>
+<li>It will prompt you to enter your password for the updates.</li>
+</ul>
+<h3 id="After-following-these-steps-you-should-have-a-fully-functional-Ubuntu-system-on-your-machine"><a href="#After-following-these-steps-you-should-have-a-fully-functional-Ubuntu-system-on-your-machine" class="headerlink" title="After following these steps, you should have a fully functional Ubuntu system on your machine!"></a>After following these steps, you should have a fully functional Ubuntu system on your machine!</h3><hr>
+<h2 id="Virtual-Box-Set-Up-macOS-and-Windows"><a href="#Virtual-Box-Set-Up-macOS-and-Windows" class="headerlink" title="Virtual Box Set-Up (macOS and Windows)"></a>Virtual Box Set-Up (macOS and Windows)</h2><p><img src="./images/virtualbox-logo.png" alt="VirtualBox Old Logo Logo" height="150" /> <img src="./images/virtualbox-logo-2024.png" alt="VirtualBox New 2024+ Logo" height="150" /></p>
+<h3 id="Initial-Set-Up"><a href="#Initial-Set-Up" class="headerlink" title="Initial Set-Up"></a>Initial Set-Up</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">Download Oracle Virtual Box</a> for the machine you are currently using (e.g. MacBook would download the macOS package)</li>
+<li><a target="_blank" rel="noopener" href="https://releases.ubuntu.com/jammy/">Download Ubuntu [22.04.5 LTS (Jammy Jellyfish)]</a><ul>
+<li>Select the image required. If unsure, download the <strong>Desktop Image</strong></li>
+<li>If you need both, you can always add server packages to a Desktop Image, and vice versa, so the order does not matter</li>
+</ul>
+</li>
+</ol>
+<h3 id="Set-Up-Ubuntu-in-Virtual-Box"><a href="#Set-Up-Ubuntu-in-Virtual-Box" class="headerlink" title="Set Up Ubuntu in Virtual Box"></a>Set Up Ubuntu in Virtual Box</h3><p>When you open your Oracle VM Virtual Box, it will look like this:</p>
+<p><img src="/is373-project/./images/blank-virtual-box.png" alt="Screenshot of Oracle VM Virtual Box, with no Virtual Machines (VMs) yet"></p>
+<ol>
+<li>Click <strong>‘New’</strong> to create a new Virtual Machine (VM)<br>First, you will choose and name your VM.</li>
+</ol>
+<p><img src="/is373-project/./images/vm-setup-1.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
+<ul>
+<li><strong>Name</strong>: This is where you add an identifiable name&#x2F;nickname for your VM</li>
+<li><strong>Folder&#x2F;Machine Folder</strong>: This is where you select your VM’s location. You can choose any location that has enough space</li>
+<li><strong>ISO Image</strong>: If this field is available, you may select the Ubuntu image that you downloaded in the previous steps, and it will automatically set the <strong>Type</strong> and <strong>Version</strong> for you. If not, continue to:</li>
+<li><strong>Type</strong>: This is where you select the desired OS for your VM. Choose <strong>‘Linux’</strong></li>
+<li><strong>Version</strong>: This is where you select the version of your OS. Choose <strong>‘Ubuntu (64-bit)’</strong></li>
+</ul>
+<p>  Click <strong>‘Next’</strong></p>
+<ol start="2">
+<li>a. You may or may not get get a “Unattended Guest OS Install Setup” screen</li>
+</ol>
+<p><img src="/is373-project/./images/vm-setup-2.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
+<ul>
+<li>If you get this screen, you may click <strong>‘Next’</strong></li>
+<li>Note: by default, username is <strong>“vboxuser”</strong> and password is <strong>“changeme”</strong></li>
+</ul>
+<ol start="2">
+<li>b. Hardware &#x2F; Memory Size<br>A portion of your machine’s resources will be dedicated to the VM.</li>
+</ol>
+<p><img src="/is373-project/./images/vm-setup-3.png" alt="Screenshot of Oracle VM Virtual Box Hardware setup page"></p>
+<ul>
+<li><p>You may have different options depending on your machine</p>
+</li>
+<li><p>For allocating resources, choose the highest amount possible within the green “reccomendation” zone</p>
+<p>Click <strong>‘Next’</strong></p>
+</li>
+</ul>
+<ol start="3">
+<li>Virtual Hard Disk + location and size</li>
+</ol>
+<ul>
+<li>Select <strong>‘Create a Virtual Hard Disk Now’</strong></li>
+<li>If asked for a hard disk type, choose any</li>
+<li>If asked, leave default <strong>‘Dynamically allocated’</strong> over <strong>Fixed size</strong></li>
+<li>Choose <strong>30.00 GB</strong> as the maximum amount of file data that the VM may store on the hard drive</li>
+</ul>
+<p><img src="/is373-project/./images/vm-setup-4.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
+<p>  Click <strong>‘Next’</strong></p>
+<ol start="4">
+<li>Click <strong>‘Create’</strong> or <strong>‘Finish’</strong> to complete your new Ubuntu VM!</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/setup-ubuntu/" data-id="cm23zzsio0007hioygq4p7u2d" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/is373-project/2024/10/11/links-citations/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/is373-project/2024/10/11/test-post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Test Post</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/is373-project/archives/2024/10/">October 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-12factorapp/">About the Twelve Factor App</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-docker/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-computers-etc/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/git-github/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/is373-project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/is373-project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/is373-project/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/is373-project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/is373-project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

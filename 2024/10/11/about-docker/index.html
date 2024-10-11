@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="About DockerWhat is Docker?Docker is a containerization platform.     Containerization: The process of packaging source code into an executable container  Kubernetes is used by larger infrastructures">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://yumis56.github.io/is373-project/2024/10/11/about-docker/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="About DockerWhat is Docker?Docker is a containerization platform.     Containerization: The process of packaging source code into an executable container  Kubernetes is used by larger infrastructures">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/2024/10/11/about-docker/images/docker-logo.png">
+<meta property="article:published_time" content="2024-10-11T00:36:58.198Z">
+<meta property="article:modified_time" content="2024-10-11T00:36:58.198Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yumis56.github.io/is373-project/2024/10/11/about-docker/images/docker-logo.png">
+  
+    <link rel="alternate" href="/is373-project/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/is373-project/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/is373-project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/is373-project/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/is373-project/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/is373-project/">Home</a>
+        
+          <a class="main-nav-link" href="/is373-project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/is373-project/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yumis56.github.io/is373-project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-about-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/11/about-docker/" class="article-date">
+  <time class="dt-published" datetime="2024-10-11T00:36:58.198Z" itemprop="datePublished">2024-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="About-Docker"><a href="#About-Docker" class="headerlink" title="About Docker"></a>About Docker</h1><h2 id="What-is-Docker"><a href="#What-is-Docker" class="headerlink" title="What is Docker?"></a>What is Docker?</h2><p>Docker is a <em>containerization</em> platform.</p>
+<img src="./images/docker-logo.png" alt="Docker Logo" width="300" />
+
+<p>  <strong>Containerization</strong>: The process of packaging source code into an executable container</p>
+<ul>
+<li>Kubernetes is used by larger infrastructures and requires at least 3 servers to run applications</li>
+<li>Docker is best for individual users and smaller infrastructures, requires only 1 server</li>
+</ul>
+<p>  <strong>Container</strong>: The executable, packaged source code&#x2F;software. Similar to a Virtual Machine (VM), but does not simulate an entire computer</p>
+<p>  <strong>Registry</strong>: Stores and distributes named Docker images, organized into repositories. Repositories hold versions of an image, identified by tags</p>
+<ul>
+<li>Docker Hub is the official, public registry, and is used by default</li>
+</ul>
+<p>  <strong>Image</strong>: Similar to a snapshot for VMs, it acts as a static template for containers</p>
+<p>  <strong>Layer</strong>: The difference between an old and new image, manually created after using <code>docker commit</code> to commit file changes</p>
+<ul>
+<li><code>docker commit [options/flags] CONTAINER [REPOSITORY[:TAG]]</code></li>
+<li>NOTE: images are static (you cannot edit them), so any changes made must be saved to a new image!</li>
+</ul>
+<p>  <strong>Docker Daemon</strong>: The background process running on the OS, executing Docker tasks. Configured using the Docker Desktop settings page, or through a JSON file</p>
+<p>  <strong>Docker Client</strong>: The primary way of interacting with Docker. The Client sends commands to <code>dockerd</code> (the Docker daemon)</p>
+<ul>
+<li>Client can communicate to multiple daemons</li>
+</ul>
+<h2 id="How-to-Use-Docker"><a href="#How-to-Use-Docker" class="headerlink" title="How to Use Docker"></a>How to Use Docker</h2><h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.docker.com/get-started/">Download Docker</a> for your OS</li>
+<li>Test installation by running <code>docker run hello-world</code></li>
+</ol>
+<h3 id="Running-a-Container"><a href="#Running-a-Container" class="headerlink" title="Running a Container"></a>Running a Container</h3><ol>
+<li><code>docker pull example-image-here</code> to pull an image from the <em>Docker registry</em></li>
+<li><code>docker run example-image-here echo "success message here"</code> to run an image, then echo a message for user-readable feedback<ul>
+<li>Docker container will run and then exit very quickly, so adding a message is useful for notifying the user</li>
+</ul>
+</li>
+</ol>
+<h2 id="Example-Docker-Commands"><a href="#Example-Docker-Commands" class="headerlink" title="Example Docker Commands"></a>Example Docker Commands</h2><p><code>docker images</code></p>
+<ul>
+<li>lists images on the system</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>REPOSITORY</th>
+<th>TAG</th>
+<th>IMAGE ID</th>
+<th>CREATED</th>
+<th>VIRTUAL SIZE</th>
+</tr>
+</thead>
+</table>
+<p><code>docker ps</code></p>
+<ul>
+<li>lists containers that are running</li>
+<li><code>docker ps -a</code> will show all containers, including ones that have exited</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>CONTAINER ID</th>
+<th>IMAGE</th>
+<th>COMMAND</th>
+<th>CREATED</th>
+<th>STATUS</th>
+<th>PORTS</th>
+<th>NAMES</th>
+</tr>
+</thead>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/about-docker/" data-id="cm23zzsil0002hioy3c20hbwp" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/is373-project/2024/10/11/about-12factorapp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          About the Twelve Factor App
+        
+      </div>
+    </a>
+  
+  
+    <a href="/is373-project/2024/10/11/about-computers-etc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/is373-project/archives/2024/10/">October 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-12factorapp/">About the Twelve Factor App</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-docker/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-computers-etc/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/git-github/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/is373-project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/is373-project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/is373-project/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/is373-project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/is373-project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

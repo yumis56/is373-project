@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>About Virtualization and Containerization | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="About Virtualization?What is Virtualization?Virtualization is a technology that allows one physical machine (like your computer) to act as if it were multiple separate computers, called “virtual machi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About Virtualization and Containerization">
+<meta property="og:url" content="https://yumis56.github.io/is373-project/2024/10/11/virtualization-containerization/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="About Virtualization?What is Virtualization?Virtualization is a technology that allows one physical machine (like your computer) to act as if it were multiple separate computers, called “virtual machi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yumis56.github.io/is373-project/2024/10/11/virtualization-containerization/images/containerization-vs.-virtualization-768x420.png">
+<meta property="article:published_time" content="2024-10-11T00:36:58.198Z">
+<meta property="article:modified_time" content="2024-10-11T00:36:58.198Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yumis56.github.io/is373-project/2024/10/11/virtualization-containerization/images/containerization-vs.-virtualization-768x420.png">
+  
+    <link rel="alternate" href="/is373-project/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/is373-project/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/is373-project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/is373-project/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/is373-project/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/is373-project/">Home</a>
+        
+          <a class="main-nav-link" href="/is373-project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/is373-project/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yumis56.github.io/is373-project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-virtualization-containerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/11/virtualization-containerization/" class="article-date">
+  <time class="dt-published" datetime="2024-10-11T00:36:58.198Z" itemprop="datePublished">2024-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      About Virtualization and Containerization
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="About-Virtualization"><a href="#About-Virtualization" class="headerlink" title="About Virtualization?"></a>About Virtualization?</h1><h2 id="What-is-Virtualization"><a href="#What-is-Virtualization" class="headerlink" title="What is Virtualization?"></a>What is Virtualization?</h2><p>Virtualization is a technology that allows one physical machine (like your computer) to act as if it were multiple separate computers, called “virtual machines” (VMs). Each virtual machine runs its operating system and applications, but they all share the physical resources of the host machine, such as CPU, memory, and storage.</p>
+<h2 id="Simple-Example"><a href="#Simple-Example" class="headerlink" title="Simple Example:"></a>Simple Example:</h2><p>Imagine you have a house with one big room, but you want to create different workspaces for different tasks, like a kitchen, an office, and a bedroom. Instead of building separate rooms, you could use room dividers to create separate areas within the same space. Each area serves a different purpose, but they all share the same overall space.</p>
+<p>In virtualization:</p>
+<ul>
+<li><strong>The house</strong> &#x3D; the physical machine (your computer or server)</li>
+<li><strong>Room dividers</strong> &#x3D; virtualization software (called a “hypervisor”)</li>
+<li><strong>Separate areas</strong> &#x3D; virtual machines, each running its operating system and applications</li>
+</ul>
+<p>This approach helps use resources more efficiently because instead of needing a whole new computer for each task, you can run multiple virtual machines on one physical machine. Virtualization is widely used in modern computing to save money, improve scalability, and increase flexibility in resource use.</p>
+<h3 id="History-of-Virtualization"><a href="#History-of-Virtualization" class="headerlink" title="History of Virtualization"></a>History of Virtualization</h3><p>The concept of virtualization dates back to the 1960s when IBM developed it to improve the efficiency of large mainframe computers. Back then, mainframes were costly and limited, so IBM introduced <strong>virtual machines (VMs)</strong> that allowed different users to run separate workloads on the same physical machine.</p>
+<ul>
+<li><strong>1960s</strong>: IBM introduces virtualization to allow time-sharing on mainframes, giving multiple users the ability to access computing resources simultaneously.</li>
+<li><strong>1970s</strong>: Virtualization remained primarily in mainframe environments, as smaller computers like personal computers (PCs) didn’t need this level of resource sharing.</li>
+<li><strong>1990s</strong>: As PCs grew in power, companies like VMware began to apply virtualization to servers, enabling more efficient use of resources in data centers.</li>
+<li><strong>2000s and Beyond</strong>: Virtualization became mainstream, transforming modern IT infrastructure by enabling <strong>cloud computing</strong>. Today, virtual machines are fundamental to many cloud services, such as Amazon Web Services (AWS) and Microsoft Azure, helping businesses scale efficiently.</li>
+</ul>
+<p>From mainframes to modern cloud computing, virtualization has been key in maximizing hardware utilization, reducing costs, and improving flexibility in IT environments.</p>
+<h1 id="What-is-Containerization"><a href="#What-is-Containerization" class="headerlink" title="What is Containerization?"></a>What is Containerization?</h1><p>Containerization is a technology that allows developers to package an application and all of its dependencies into a single, portable “container.” This container can run consistently on any system that has the container runtime, making it easier to deploy and run applications across different environments, like development, testing, and production.</p>
+<h2 id="Simple-Example-1"><a href="#Simple-Example-1" class="headerlink" title="Simple Example:"></a>Simple Example:</h2><p>Think of containerization like packing a lunchbox:</p>
+<ul>
+<li>You want to bring lunch to work or school. Instead of worrying about whether the fridge or microwave will be available, you pack everything you need (food, utensils, napkins) into a lunchbox.</li>
+<li>Now, no matter where you go, you can enjoy your meal without worrying about the kitchen setup.</li>
+</ul>
+<p>In containerization:</p>
+<ul>
+<li><strong>The lunchbox</strong> &#x3D; the container, which holds everything the application needs to run (code, libraries, dependencies).</li>
+<li><strong>The food and utensils</strong> &#x3D; the application and its dependencies.</li>
+<li><strong>Wherever you go</strong> &#x3D; any computer or server that has a container runtime (like Docker).</li>
+</ul>
+<p>By using containers, you ensure the application behaves the same way, no matter where it’s run. Containers are popular in modern software development because they make it easier to run, test, and deploy applications consistently across different environments.</p>
+<h2 id="History-of-Containerization"><a href="#History-of-Containerization" class="headerlink" title="History of Containerization"></a>History of Containerization</h2><p>Containerization has roots that date back to the early 2000s, though the concept of isolating applications in environments has existed for much longer.</p>
+<ul>
+<li><p><strong>2000s</strong>: The idea of containerization emerged with <strong>Solaris Zones</strong> (2004) and <strong>Linux Containers (LXC)</strong> (2008). These early technologies allowed for the creation of isolated environments on the same system, where applications could run without interfering with one another.</p>
+</li>
+<li><p><strong>2013</strong>: The real breakthrough came with the release of <strong>Docker</strong>, a tool that made containerization simple, portable, and accessible to a wide audience. Docker standardized the container image format and introduced an easy-to-use interface, revolutionizing how developers build, test, and deploy applications.</p>
+</li>
+<li><p><strong>2014 and Beyond</strong>: Following Docker’s success, other technologies like <strong>Kubernetes</strong> (developed by Google) emerged to manage and orchestrate containers at a larger scale. This led to the widespread adoption of containerization across various industries, particularly in cloud computing and DevOps.</p>
+</li>
+</ul>
+<p>Today, containerization is a cornerstone of modern software development, allowing developers to move applications between environments and scale them efficiently and easily.</p>
+<hr>
+<h3 id="Key-Differences-from-Virtualization"><a href="#Key-Differences-from-Virtualization" class="headerlink" title="Key Differences from Virtualization:"></a>Key Differences from Virtualization:</h3><p>While virtualization involves creating multiple virtual machines on one physical machine, <strong>containerization</strong> focuses on packaging just the application and its dependencies into lightweight containers. Unlike virtual machines, containers share the same operating system kernel, making them more efficient regarding resource usage.</p>
+<img src="images/containerization-vs.-virtualization-768x420.png" width="600" />
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/virtualization-containerization/" data-id="cm23zzsip0009hioy3qqrbtoj" data-title="About Virtualization and Containerization" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/is373-project/2024/10/11/test-post/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Test Post
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/is373-project/archives/2024/10/">October 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-12factorapp/">About the Twelve Factor App</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-docker/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/about-computers-etc/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/is373-project/2024/10/11/git-github/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/is373-project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/is373-project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/is373-project/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/is373-project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/is373-project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
