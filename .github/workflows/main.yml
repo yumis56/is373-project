@@ -15,7 +15,8 @@ jobs:
     steps:
       - name: Checkout Hexo repository
         uses: actions/checkout@v4
-        
+
+        #import content start
       - name: Checkout is373 repository
         uses: actions/checkout@v4
         with:
@@ -39,8 +40,9 @@ jobs:
           git add .
           git commit -m "Update md and images from is373 to is373-project" || echo "No changes to commit"
           git push origin main
-         
-    
+         #import content end
+
+    #hexo start
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -48,7 +50,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        working-directory: ./blog
+        #working-directory: ./blog
         run: |
             npm install
             npm ci
@@ -58,7 +60,6 @@ jobs:
         run: |
             npx hexo clean
             npx hexo generate
-
     
       - name: Start Hexo server
         working-directory: ./blog
@@ -67,9 +68,9 @@ jobs:
           echo $! > hexo.pid
           sleep 5  # Give the server a moment to start
           echo "Hexo server started"
-  
+      #hexo end    besides closing server after playwright
 
-    
+      #playwright start
       - name: Checkout Playwright test repository
         uses: actions/checkout@v4
         with:
@@ -107,13 +108,15 @@ jobs:
         with:
           name: playwright-results
           path: playwright-results.txt
+      #playwright end
+
      
       - name: Stop Hexo server
         working-directory: ./blog
         if: always()
         run: |
           kill `cat hexo.pid`
-
+      
 
   deploy:
     runs-on: ubuntu-latest
