@@ -1,3 +1,6 @@
+---
+title: About Git and GitHub
+---
 # Git & GitHub
 
 

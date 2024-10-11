@@ -1,3 +1,7 @@
+---
+title: About Docker
+---
+
 # About Docker
 ## What is Docker?
 Docker is a *containerization* platform.

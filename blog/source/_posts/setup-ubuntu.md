@@ -1,3 +1,6 @@
+---
+title: Set Up Ubuntu
+---
 # Ubuntu Set-Up Guide
 
 

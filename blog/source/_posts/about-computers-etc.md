@@ -1,3 +1,7 @@
+---
+title: About Computing Parts and Concepts
+---
+
 # About Computing Parts and Concepts
 
 ## CPU

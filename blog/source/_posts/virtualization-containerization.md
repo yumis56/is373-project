@@ -1,8 +1,7 @@
 ---
 title: About Virtualization and Containerization
 ---
-# About Virtualization?
-## What is Virtualization?
+# What is Virtualization?
 Virtualization is a technology that allows one physical machine (like your computer) to act as if it were multiple separate computers, called "virtual machines" (VMs). Each virtual machine runs its operating system and applications, but they all share the physical resources of the host machine, such as CPU, memory, and storage.
 
 ## Simple Example:
