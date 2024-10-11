@@ -78,7 +78,7 @@ jobs:
         with:
           repository: yumis56/is373-devops
           path: is373-devops
-        #testing stuff out  
+
       - name: Build Docker image for Playwright tests
         working-directory: is373-devops
         run: |
@@ -86,15 +86,15 @@ jobs:
       
       - name: Run Playwright tests in Docker
         run: |
-          # This one is funcitoning, but I want to set conditionals
+          # This one is functioning, but I want to set conditionals
           #docker run --rm playwright-tests > playwright-results.txt || true
 
-          if docker run --rm playwright-tests > is373-devops/test-results/playwright-results.txt; then
+          if docker run --rm playwright-tests > ./test-results/playwright-results.txt; then
             echo "playwright-tests=true" >> $GITHUB_ENV
-            echo "SUCCESS: Check report in playwright-results.txt"
+            echo "SUCCESS: Check report in test-results/playwright-results.txt"
           else
             echo "playwright-tests=false" >> $GITHUB_ENV
-            echo "FAILURE: Check report in playwright-results.txt"
+            echo "FAILURE: Check report in test-results/playwright-results.txt"
           fi
     
    
@@ -118,7 +118,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results
-          path: is373-devops/test-results/playwright-results.txt
+          path: ./test-results/playwright-results.txt
       #playwright end
 
      
