@@ -1,3 +1,7 @@
+---
+title: Readme file
+---
+
 ## IS373 / Group Topic: UFOS
 ***
 # Welcome to our Wiki! 
