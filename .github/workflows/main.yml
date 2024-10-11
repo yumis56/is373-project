@@ -52,7 +52,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        #working-directory: ./blog
+        working-directory: ./blog
         run: |
             npm install
             npm ci
