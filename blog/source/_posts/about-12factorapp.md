@@ -1,6 +1,3 @@
----
-title: About the Twelve Factor App
----
 # About The Twelve Factor App
 ## What is the Twelve Factor App?
 
