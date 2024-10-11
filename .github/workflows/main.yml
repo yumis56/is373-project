@@ -89,7 +89,7 @@ jobs:
           # This one is funcitoning, but I want to set conditionals
           #docker run --rm playwright-tests > playwright-results.txt || true
 
-          if docker run --rm playwright-tests > playwright-results.txt; then
+          if docker run --rm playwright-tests > is373-devops/test-results/playwright-results.txt; then
             echo "playwright-tests=true" >> $GITHUB_ENV
             echo "SUCCESS: Check report in playwright-results.txt"
           else
