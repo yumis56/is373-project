@@ -52,7 +52,6 @@ jobs:
             npm install
             npm ci
 
-
       - name: Generate Hexo site
         working-directory: ./blog
         run: |
