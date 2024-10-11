@@ -118,7 +118,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results
-          path: playwright-results.txt
+          path: is373-devops/test-results/playwright-results.txt
       #playwright end
 
      
