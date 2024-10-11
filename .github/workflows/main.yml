@@ -103,8 +103,8 @@ jobs:
       - name: Run Playwright tests
         working-directory: is373-devops
         id: playwright-tests
-        #run: npx playwright test --config=playwright.config.ts
-        run: npx playwright test --config=playwright.config.ts --reporter=json > playwright-results.json || true
+        #run: npx playwright test --config=playwright.config.ts --reporter=json > playwright-results.json || true
+        run: npx playwright test --config=playwright.config.ts --reporter=list > playwright-results.txt || true
       
       - name: Upload test results
         uses: actions/upload-artifact@v4
