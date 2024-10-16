@@ -83,34 +83,33 @@ jobs:
         working-directory: is373-devops
         run: |
           docker build -t playwright-tests .
-
-      # TODO newest
-      - name: Create Results Directory
-        run: mkdir -p "$GITHUB_WORKSPACE/is373-devops/test-results"
       
       - name: Run Playwright tests in Docker
         run: |
           # This one is functioning, but I want to set conditionals
           #docker run --rm playwright-tests > playwright-results.txt || true
 
-          RESULTS_FILE="/app/is373-devops/test-results/playwright-results.txt"
-
-          if docker run --rm \
-            -v "$GITHUB_WORKSPACE/is373-project/test-results:/app/test-results" \
-            -v "$GITHUB_WORKSPACE/is373-devops:/app/is373-devops" \
-            playwright-tests > "$RESULTS_FILE"; then
-            echo "playwright-tests=true" >> $GITHUB_ENV
-            echo "SUCCESS: Check report in is373-devops/test-results/playwright-results.txt"
-          else
-            echo "playwright-tests=false" >> $GITHUB_ENV
-            echo "FAILURE: Check report in is373-devops/test-results/playwright-results.txt"
-          fi
+          cd is373-project
+          docker run --rm -v ${{ github.workspace }}/is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
+          
+      - name: Save Test Results
+        run: |
+          cd is373-devops
+          
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git pull origin main
+          
+          git add test-results/playwright-results.txt
+          git commit -m "Add test results from is373-project"
+          git push origin main
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results
-          path: $GITHUB_WORKSPACE/testing-repo/test-results/playwright-results.txt
+          path: $GITHUB_WORKSPACE/is373-devops/test-results/playwright-results.txt
           if-no-files-found: warn
           compression-level: 6
           overwrite: false
@@ -129,8 +128,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-test
-    #if: github.event_name == 'push'
-    if: success() && needs.build-and-test.outputs.playwright-tests == 'true'
+    if: success() # TODO still figuring out playwright implementation
+    #if: success() && needs.build-and-test.outputs.playwright-tests == 'true'
 
     steps:
       - name: Checkout Hexo repository
