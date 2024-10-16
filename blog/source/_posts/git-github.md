@@ -8,7 +8,7 @@ title: About Git and GitHub
 ## What is Git?
 Git is  Version Control System (VCS)
 
-![Git Logo](./images/git-logo.png)
+![Git Logo](/images/git-logo.png)
 
  - *However*, it handles information in a completely different from other VCSs, so you should see Git as a separated concept to avoid confusion
  - The main difference is that Git uses **Snapshot storage**, while other VCSs typically use **Delta storage**
@@ -42,7 +42,7 @@ Git is the VCS, and GitHub is the one of many remote repository hosting sites.
 ## What is GitHub?
 GitHub is a web-based service for hosting **remote repositories**
 
-![GitHub Logo](./images/github-logo.png)
+![GitHub Logo](/images/github-logo.png)
 
 - You can use Git without GitHub, but GitHub needs Git to work
 
@@ -57,7 +57,7 @@ So, why bother using GitHub?
 
 ## The 3 Git workflow steps
 
-![Git staging steps](./images/git-stages.png)
+![Git staging steps](/images/git-stages.png)
 
 - **Working Directory**: The working directory, or working tree, is a <code>checkout</code> of a single version (branch) of a project. The files are pulled from a Git directory and placed on the local disk to be used or modified
 - **Staging Area / Index**: The staging area stores the changes to be committed. It *only* prepares to commit changes that you have added for tracking
