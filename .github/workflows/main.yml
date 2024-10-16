@@ -12,6 +12,21 @@ permissions:
     contents: write
 
 jobs:
+  verify-token:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check GitHub PAT
+          run: |
+            RESPONSE=$(curl -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" https://api.github.com/user)
+            if [[ "$RESPONSE" == *"\"login\":"* ]]; then
+              echo "PAT is valid. User info: $RESPONSE"
+            else
+              echo "Invalid PAT. Response: $RESPONSE"
+              exit 1
+            fi
+
+
+#######
   build-and-test:
     runs-on: ubuntu-latest
     outputs:
