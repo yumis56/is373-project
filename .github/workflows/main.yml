@@ -139,12 +139,14 @@ jobs:
           cd is373-devops
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-
-          git pull origin main
+          
+          git checkout results
+          git pull origin results
+          
           
           git add is373-devops/test-results/playwright-results.txt
           git commit -m "Add Playwright test results"
-          git push origin main
+          git push origin results
           #git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/yumis56/is373-devops.git main
 
      
