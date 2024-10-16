@@ -69,600 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-about-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373-project/2024/10/11/about-docker/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.083Z" itemprop="datePublished">2024-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/about-docker/">About Docker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="About-Docker"><a href="#About-Docker" class="headerlink" title="About Docker"></a>About Docker</h1><h2 id="What-is-Docker"><a href="#What-is-Docker" class="headerlink" title="What is Docker?"></a>What is Docker?</h2><p>Docker is a <em>containerization</em> platform.</p>
-<img src="./images/docker-logo.png" alt="Docker Logo" width="300" />
-
-<p>  <strong>Containerization</strong>: The process of packaging source code into an executable container</p>
-<ul>
-<li>Kubernetes is used by larger infrastructures and requires at least 3 servers to run applications</li>
-<li>Docker is best for individual users and smaller infrastructures, requires only 1 server</li>
-</ul>
-<p>  <strong>Container</strong>: The executable, packaged source code&#x2F;software. Similar to a Virtual Machine (VM), but does not simulate an entire computer</p>
-<p>  <strong>Registry</strong>: Stores and distributes named Docker images, organized into repositories. Repositories hold versions of an image, identified by tags</p>
-<ul>
-<li>Docker Hub is the official, public registry, and is used by default</li>
-</ul>
-<p>  <strong>Image</strong>: Similar to a snapshot for VMs, it acts as a static template for containers</p>
-<p>  <strong>Layer</strong>: The difference between an old and new image, manually created after using <code>docker commit</code> to commit file changes</p>
-<ul>
-<li><code>docker commit [options/flags] CONTAINER [REPOSITORY[:TAG]]</code></li>
-<li>NOTE: images are static (you cannot edit them), so any changes made must be saved to a new image!</li>
-</ul>
-<p>  <strong>Docker Daemon</strong>: The background process running on the OS, executing Docker tasks. Configured using the Docker Desktop settings page, or through a JSON file</p>
-<p>  <strong>Docker Client</strong>: The primary way of interacting with Docker. The Client sends commands to <code>dockerd</code> (the Docker daemon)</p>
-<ul>
-<li>Client can communicate to multiple daemons</li>
-</ul>
-<h2 id="How-to-Use-Docker"><a href="#How-to-Use-Docker" class="headerlink" title="How to Use Docker"></a>How to Use Docker</h2><h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.docker.com/get-started/">Download Docker</a> for your OS</li>
-<li>Test installation by running <code>docker run hello-world</code></li>
-</ol>
-<h3 id="Running-a-Container"><a href="#Running-a-Container" class="headerlink" title="Running a Container"></a>Running a Container</h3><ol>
-<li><code>docker pull example-image-here</code> to pull an image from the <em>Docker registry</em></li>
-<li><code>docker run example-image-here echo "success message here"</code> to run an image, then echo a message for user-readable feedback<ul>
-<li>Docker container will run and then exit very quickly, so adding a message is useful for notifying the user</li>
-</ul>
-</li>
-</ol>
-<h2 id="Example-Docker-Commands"><a href="#Example-Docker-Commands" class="headerlink" title="Example Docker Commands"></a>Example Docker Commands</h2><p><code>docker images</code></p>
-<ul>
-<li>lists images on the system</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>REPOSITORY</th>
-<th>TAG</th>
-<th>IMAGE ID</th>
-<th>CREATED</th>
-<th>VIRTUAL SIZE</th>
-</tr>
-</thead>
-</table>
-<p><code>docker ps</code></p>
-<ul>
-<li>lists containers that are running</li>
-<li><code>docker ps -a</code> will show all containers, including ones that have exited</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>CONTAINER ID</th>
-<th>IMAGE</th>
-<th>COMMAND</th>
-<th>CREATED</th>
-<th>STATUS</th>
-<th>PORTS</th>
-<th>NAMES</th>
-</tr>
-</thead>
-</table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/about-docker/" data-id="cm2440s560003gdqe62ex0lml" data-title="About Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-git-github" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373-project/2024/10/11/git-github/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.083Z" itemprop="datePublished">2024-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/git-github/">About Git and GitHub</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Git-GitHub"><a href="#Git-GitHub" class="headerlink" title="Git &amp; GitHub"></a>Git &amp; GitHub</h1><ul>
-<li>e.g. For banking, the account balance and banking statement would be a <strong>snapshot</strong>, while transaction history would be <strong>delta storage</strong>.</li>
-</ul>
-<h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><p>Git is  Version Control System (VCS)</p>
-<p><img src="/is373-project/./images/git-logo.png" alt="Git Logo"></p>
-<ul>
-<li><em>However</em>, it handles information in a completely different from other VCSs, so you should see Git as a separated concept to avoid confusion</li>
-<li>The main difference is that Git uses <strong>Snapshot storage</strong>, while other VCSs typically use <strong>Delta storage</strong></li>
-</ul>
-<h4 id="Snapshot-storage-vs-Delta-storage"><a href="#Snapshot-storage-vs-Delta-storage" class="headerlink" title="Snapshot storage vs. Delta storage"></a>Snapshot storage vs. Delta storage</h4><ul>
-<li><p><strong>Snapshot storage</strong>: Git stores data as a stream of snapshots.</p>
-<ul>
-<li>Each snapshot represents the system state at a given time</li>
-<li>Git will store unchanged files as a link to the previous identical files</li>
-<li>More simple and efficient, but can consume a lot of storage</li>
-</ul>
-</li>
-<li><p><strong>Delta storage</strong> (delta-based version control): Other VCMs store data based only on file or system changes, rather than the entire state.</p>
-<ul>
-<li><strong>Delta</strong>: The difference between the current version and the previous version</li>
-<li>All the <strong>deltas</strong> are combined to rebuild a system state</li>
-<li>More complex, but can save on storage</li>
-</ul>
-</li>
-</ul>
-<p>Although delta storage is more storage-efficient, snapshot storage makes more sense for getting an accurate, updated representation.</p>
-<p>Now, back to Git:</p>
-<ul>
-<li>Git generally works with your local files and resources; even if you have no internet or VPN access, you can still <code>commit</code> your changes to your local copy<ul>
-<li>Other VCMs may allow file edits, but do not allow “offline” database commits</li>
-</ul>
-</li>
-<li>Everything in Git is <strong>checksummed</strong></li>
-<li>All changes, incomplete transfers, and file corruptions are detected by Git</li>
-<li>Git database stores everything by the <strong>hash value</strong> of its contents, not by file names</li>
-<li>Git generally only <code>add</code> data, which improves data recovery by making it difficult to erase committed data</li>
-</ul>
-<p>Git is the VCS, and GitHub is the one of many remote repository hosting sites.</p>
-<hr>
-<h2 id="What-is-GitHub"><a href="#What-is-GitHub" class="headerlink" title="What is GitHub?"></a>What is GitHub?</h2><p>GitHub is a web-based service for hosting <strong>remote repositories</strong></p>
-<p><img src="/is373-project/./images/github-logo.png" alt="GitHub Logo"></p>
-<ul>
-<li>You can use Git without GitHub, but GitHub needs Git to work</li>
-</ul>
-<p>So, why bother using GitHub?</p>
-<ul>
-<li>Collaboration and Project Management: GitHub improves team collaboration with features like pull requests, code reviews, and issue tracking, as well as tracking commit histories to quantify individual contribution</li>
-<li>Access Control: You can choose the visibility and access rights of your code</li>
-<li>Documentation: GitHub Wikis and readme.md files are available as documentation tools  </li>
-<li>Remote repository backup: Even if your machine spontaneously combusts (or you lose your local directory in any way), as long as you have committed your local changes to the remote repository, you will be able to restore your files and directories from anywhere else!</li>
-<li><strong>CI&#x2F;CD</strong>: Continues Integration and Continuous Delivery. You can use <strong>GitHub Actions</strong> to automate your workflow to build, test, and deploy</li>
-<li>Portfolio &#x2F; Networking: Remote repositories allow sharing of resources, contributions to public projects, and also allow you to showcase your projects and portfolio to peers and companies alike</li>
-<li>Web UI: GitHub has a user-friendly web interface, which is a helpful addition to command line controls</li>
-</ul>
-<h2 id="The-3-Git-workflow-steps"><a href="#The-3-Git-workflow-steps" class="headerlink" title="The 3 Git workflow steps"></a>The 3 Git workflow steps</h2><p><img src="/is373-project/./images/git-stages.png" alt="Git staging steps"></p>
-<ul>
-<li><strong>Working Directory</strong>: The working directory, or working tree, is a <code>checkout</code> of a single version (branch) of a project. The files are pulled from a Git directory and placed on the local disk to be used or modified</li>
-<li><strong>Staging Area &#x2F; Index</strong>: The staging area stores the changes to be committed. It <em>only</em> prepares to commit changes that you have added for tracking</li>
-<li><strong>Repository &#x2F; Git Directory</strong>: After staging all the desired changes, the changes are then committed and then pushed to the Git Directory as a permanent snapshot</li>
-</ul>
-<h2 id="Set-Up-Git-and-GitHub"><a href="#Set-Up-Git-and-GitHub" class="headerlink" title="Set Up Git and GitHub"></a>Set Up Git and GitHub</h2><h3 id="1-Download-Git"><a href="#1-Download-Git" class="headerlink" title="1. Download Git"></a>1. <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Download Git</a></h3><h3 id="2-Set-a-Git-username"><a href="#2-Set-a-Git-username" class="headerlink" title="2. Set a Git username"></a>2. Set a Git username</h3><ul>
-<li>Open a terminal</li>
-<li>to set the username for all repositories, use <code>git config --global user.name "Username Here"</code><ul>
-<li>e.g.</li>
-<li><code>git config --global user.name "Jay Doe"</code></li>
-<li><code>git config --global user.name "username123"</code></li>
-<li>To set for a single repository, simple exclude the –global tag</li>
-</ul>
-</li>
-<li>Typing <code>git config --global user.name</code> should return your username</li>
-</ul>
-<h3 id="3-Set-a-Git-email"><a href="#3-Set-a-Git-email" class="headerlink" title="3. Set a Git email"></a>3. Set a Git email</h3><ul>
-<li>From terminal, type <code>git config --global user.email "your_email@here"</code><ul>
-<li>Once again, exclude the –global tag to set email for only 1 repository</li>
-</ul>
-</li>
-<li>Typing <code>git config --global user.email</code> should return your email address</li>
-<li>You will also add this email address to your GitHub account!</li>
-</ul>
-<h3 id="4-Set-up-a-GitHub-account"><a href="#4-Set-up-a-GitHub-account" class="headerlink" title="4. Set up a GitHub account"></a>4. Set up a GitHub account</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/">Sign up for GitHub</a> and follow the prompts</li>
-<li>Verify your email address to access the neccessary features</li>
-</ul>
-<h3 id="5-Generate-an-SSH"><a href="#5-Generate-an-SSH" class="headerlink" title="5. Generate an SSH"></a>5. Generate an SSH</h3><ul>
-<li>From your terminal, type <code>ssh-keygen -t ed25519 -C "<a href="mailto:&#x79;&#111;&#x75;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#111;&#x75;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a>"</code> with the email you use for GitHub<ul>
-<li>If the Ed25519 algorithm is not supported, you can use <code>ssh-keygen -t rsa -b 4096 -C "<a href="mailto:&#x79;&#111;&#117;&#x72;&#x5f;&#101;&#109;&#x61;&#105;&#x6c;&#64;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x79;&#111;&#117;&#x72;&#x5f;&#101;&#109;&#x61;&#105;&#x6c;&#64;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;</a>"</code></li>
-</ul>
-</li>
-<li>Press enter to accept the default location. If you already have an SSH key with an identical name, we reccomend choosing a custom name for your key, to avoid overwriting any existing keys<ul>
-<li>You can choose a passphrase or simply press enter to skip adding a passphrase</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-Add-SSH-Key-to-GitHub"><a href="#6-Add-SSH-Key-to-GitHub" class="headerlink" title="6. Add SSH Key to GitHub"></a>6. Add SSH Key to GitHub</h3><ul>
-<li>From terminal, type <code>cat ~/.ssh/your_sshkey_name_here.pub</code> with the file path of your public key file</li>
-<li>PLEASE MAKE SURE it ends with .pub, otherwise you may expose your private SSH key !!</li>
-<li>Copy the displayed file contents</li>
-<li>You can also open the .pub file in any text editor to copy the contents directly</li>
-<li>On GitHub, access your <strong>Settings</strong></li>
-<li>Under <strong>Access</strong> section of the sidebar, click <strong>SSH and GPG keys</strong></li>
-<li>Click <strong>New SSH key</strong> or <strong>Add SSH key</strong></li>
-<li>Paste your key into the “Key” file</li>
-<li>Give your key an identifiable nickname, e.g. the name of your class</li>
-</ul>
-<hr>
-<h2 id="Other-Resources"><a href="#Other-Resources" class="headerlink" title="Other Resources"></a>Other Resources</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.git-init.com/snapshot-vs-delta-storage/">https://blog.git-init.com/snapshot-vs-delta-storage/</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/about-github-actions/understanding-github-actions">https://docs.github.com/en/actions/about-github-actions/understanding-github-actions</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/git-github/" data-id="cm2440s570004gdqe1w7z6xhw" data-title="About Git and GitHub" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373-project/2024/10/11/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.083Z" itemprop="datePublished">2024-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/hello-world/" data-id="cm2440s570005gdqe1xfyazbf" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-links-citations" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373-project/2024/10/11/links-citations/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.083Z" itemprop="datePublished">2024-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Citations"><a href="#Citations" class="headerlink" title="Citations"></a>Citations</h2><ol>
-<li><p><a target="_blank" rel="noopener" href="https://middleware.io/blog/containerization/">https://middleware.io/blog/containerization/</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://penchev.com/posts/twelve-factor-app-in-2023/">https://penchev.com/posts/twelve-factor-app-in-2023/</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://digital.gov/resources/an-introduction-github/">https://digital.gov/resources/an-introduction-github/</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.techtarget.com/searchdatacenter/definition/Ubuntu">https://www.techtarget.com/searchdatacenter/definition/Ubuntu</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://12factor.net/">https://12factor.net/</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://medium.com/@csw11235/understanding-the-12-factor-app-methodology-why-we-build-cloud-applications-the-way-we-do-7aed4a98fbd8">https://medium.com/@csw11235/understanding-the-12-factor-app-methodology-why-we-build-cloud-applications-the-way-we-do-7aed4a98fbd8</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.martinfowler.com/">https://www.martinfowler.com/</a></p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/links-citations/" data-id="cm2440s580006gdqe6hx34j4f" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-setup-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373-project/2024/10/11/setup-ubuntu/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.083Z" itemprop="datePublished">2024-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/setup-ubuntu/">Set Up Ubuntu</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Ubuntu-Set-Up-Guide"><a href="#Ubuntu-Set-Up-Guide" class="headerlink" title="Ubuntu Set-Up Guide"></a>Ubuntu Set-Up Guide</h1><img src="./images/ubuntu-logo.png" alt="Ubuntu Logo" width="150" />
-
-<hr>
-<h2 id="WSL2-Set-Up-Tutorial-for-Windows"><a href="#WSL2-Set-Up-Tutorial-for-Windows" class="headerlink" title="WSL2 Set-Up Tutorial for Windows"></a>WSL2 Set-Up Tutorial for Windows</h2><p>WSL: Windows Subsystem for Linux</p>
-<h3 id="What-you-will-need-beforehand"><a href="#What-you-will-need-beforehand" class="headerlink" title="What you will need beforehand:"></a>What you will need beforehand:</h3><ul>
-<li>Windows 10&#x2F;11 on virutal or physical machine</li>
-<li>Windows updated to most recent version</li>
-</ul>
-<p><strong>1. Installing WSL2</strong></p>
-<ul>
-<li>The first step to installing Ubuntu on your machine is installing WSL2 on your computer. WSL2 stands for Windows Subsystem for Linux, and it allows you to run a Linux environment on your computer without having to have a separate virtual machine.</li>
-<li>To install WSL2, you have to open Windows Terminal on your device as an adminstrator. Then enter <code> wsl --install </code>. </li>
-<li>Once it has installed, you must restart your device.</li>
-</ul>
-<p><strong>2. Installing Ubuntu</strong><br>The second step for installing Ubuntu is installing a version of Ubuntu onto WSL. We will be using a method that allows you to install Ubuntu from the command line. </p>
-<ul>
-<li>First, you must open Windows Terminal and enter <code> wsl --list --online </code> to see on the available versions of Ubuntu that you are able to install.</li>
-<li>Once you have found the version that you like, you must type the name of the version that you want and then enter the following: <code> wsl --install -d (name of installation) </code></li>
-<li>If successful, you will see a progress bar appear showing that the installation is in progress.</li>
-</ul>
-<p><strong>3. Running Ubuntu</strong><br>The final step for installing Ubuntu is running it on your machine and making sure it is functional. </p>
-<ul>
-<li>To do that, you must open Powershell terminal and type in the version of Ubuntu you installed, for example: <code> ubuntu2404.exe </code></li>
-<li>The Ubuntu terminal should start running, and if it has, then you have successfully installed Ubuntu!</li>
-<li>Once it is installed, the system will prompt you to create a username and password. Make sure to write the username and password somewhere secure so then if you forget your information, you are able to retrieve it.</li>
-<li>Optionally, you should also run updates for your Ubuntu terminal to make sure that it is up to date. You can run updates by entering the following:<br><code> sudo apt update </code><br><code> sudo apt full-upgrade -y </code></li>
-<li>It will prompt you to enter your password for the updates.</li>
-</ul>
-<h3 id="After-following-these-steps-you-should-have-a-fully-functional-Ubuntu-system-on-your-machine"><a href="#After-following-these-steps-you-should-have-a-fully-functional-Ubuntu-system-on-your-machine" class="headerlink" title="After following these steps, you should have a fully functional Ubuntu system on your machine!"></a>After following these steps, you should have a fully functional Ubuntu system on your machine!</h3><hr>
-<h2 id="Virtual-Box-Set-Up-macOS-and-Windows"><a href="#Virtual-Box-Set-Up-macOS-and-Windows" class="headerlink" title="Virtual Box Set-Up (macOS and Windows)"></a>Virtual Box Set-Up (macOS and Windows)</h2><p><img src="./images/virtualbox-logo.png" alt="VirtualBox Old Logo Logo" height="150" /> <img src="./images/virtualbox-logo-2024.png" alt="VirtualBox New 2024+ Logo" height="150" /></p>
-<h3 id="Initial-Set-Up"><a href="#Initial-Set-Up" class="headerlink" title="Initial Set-Up"></a>Initial Set-Up</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">Download Oracle Virtual Box</a> for the machine you are currently using (e.g. MacBook would download the macOS package)</li>
-<li><a target="_blank" rel="noopener" href="https://releases.ubuntu.com/jammy/">Download Ubuntu [22.04.5 LTS (Jammy Jellyfish)]</a><ul>
-<li>Select the image required. If unsure, download the <strong>Desktop Image</strong></li>
-<li>If you need both, you can always add server packages to a Desktop Image, and vice versa, so the order does not matter</li>
-</ul>
-</li>
-</ol>
-<h3 id="Set-Up-Ubuntu-in-Virtual-Box"><a href="#Set-Up-Ubuntu-in-Virtual-Box" class="headerlink" title="Set Up Ubuntu in Virtual Box"></a>Set Up Ubuntu in Virtual Box</h3><p>When you open your Oracle VM Virtual Box, it will look like this:</p>
-<p><img src="/is373-project/./images/blank-virtual-box.png" alt="Screenshot of Oracle VM Virtual Box, with no Virtual Machines (VMs) yet"></p>
-<ol>
-<li>Click <strong>‘New’</strong> to create a new Virtual Machine (VM)<br>First, you will choose and name your VM.</li>
-</ol>
-<p><img src="/is373-project/./images/vm-setup-1.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
-<ul>
-<li><strong>Name</strong>: This is where you add an identifiable name&#x2F;nickname for your VM</li>
-<li><strong>Folder&#x2F;Machine Folder</strong>: This is where you select your VM’s location. You can choose any location that has enough space</li>
-<li><strong>ISO Image</strong>: If this field is available, you may select the Ubuntu image that you downloaded in the previous steps, and it will automatically set the <strong>Type</strong> and <strong>Version</strong> for you. If not, continue to:</li>
-<li><strong>Type</strong>: This is where you select the desired OS for your VM. Choose <strong>‘Linux’</strong></li>
-<li><strong>Version</strong>: This is where you select the version of your OS. Choose <strong>‘Ubuntu (64-bit)’</strong></li>
-</ul>
-<p>  Click <strong>‘Next’</strong></p>
-<ol start="2">
-<li>a. You may or may not get get a “Unattended Guest OS Install Setup” screen</li>
-</ol>
-<p><img src="/is373-project/./images/vm-setup-2.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
-<ul>
-<li>If you get this screen, you may click <strong>‘Next’</strong></li>
-<li>Note: by default, username is <strong>“vboxuser”</strong> and password is <strong>“changeme”</strong></li>
-</ul>
-<ol start="2">
-<li>b. Hardware &#x2F; Memory Size<br>A portion of your machine’s resources will be dedicated to the VM.</li>
-</ol>
-<p><img src="/is373-project/./images/vm-setup-3.png" alt="Screenshot of Oracle VM Virtual Box Hardware setup page"></p>
-<ul>
-<li><p>You may have different options depending on your machine</p>
-</li>
-<li><p>For allocating resources, choose the highest amount possible within the green “reccomendation” zone</p>
-<p>Click <strong>‘Next’</strong></p>
-</li>
-</ul>
-<ol start="3">
-<li>Virtual Hard Disk + location and size</li>
-</ol>
-<ul>
-<li>Select <strong>‘Create a Virtual Hard Disk Now’</strong></li>
-<li>If asked for a hard disk type, choose any</li>
-<li>If asked, leave default <strong>‘Dynamically allocated’</strong> over <strong>Fixed size</strong></li>
-<li>Choose <strong>30.00 GB</strong> as the maximum amount of file data that the VM may store on the hard drive</li>
-</ul>
-<p><img src="/is373-project/./images/vm-setup-4.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
-<p>  Click <strong>‘Next’</strong></p>
-<ol start="4">
-<li>Click <strong>‘Create’</strong> or <strong>‘Finish’</strong> to complete your new Ubuntu VM!</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/setup-ubuntu/" data-id="cm2440s580007gdqe8rzfaios" data-title="Set Up Ubuntu" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-test-post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373-project/2024/10/11/test-post/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.083Z" itemprop="datePublished">2024-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/test-post/">Test Post</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="this-is-to-test-post-generation"><a href="#this-is-to-test-post-generation" class="headerlink" title="this is to test post generation"></a>this is to test post generation</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/test-post/" data-id="cm2440s590008gdqe4v2c6pxe" data-title="Test Post" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-virtualization-containerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373-project/2024/10/11/virtualization-containerization/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.083Z" itemprop="datePublished">2024-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/virtualization-containerization/">About Virtualization and Containerization</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="What-is-Virtualization"><a href="#What-is-Virtualization" class="headerlink" title="What is Virtualization?"></a>What is Virtualization?</h1><p>Virtualization is a technology that allows one physical machine (like your computer) to act as if it were multiple separate computers, called “virtual machines” (VMs). Each virtual machine runs its operating system and applications, but they all share the physical resources of the host machine, such as CPU, memory, and storage.</p>
-<h2 id="Simple-Example"><a href="#Simple-Example" class="headerlink" title="Simple Example:"></a>Simple Example:</h2><p>Imagine you have a house with one big room, but you want to create different workspaces for different tasks, like a kitchen, an office, and a bedroom. Instead of building separate rooms, you could use room dividers to create separate areas within the same space. Each area serves a different purpose, but they all share the same overall space.</p>
-<p>In virtualization:</p>
-<ul>
-<li><strong>The house</strong> &#x3D; the physical machine (your computer or server)</li>
-<li><strong>Room dividers</strong> &#x3D; virtualization software (called a “hypervisor”)</li>
-<li><strong>Separate areas</strong> &#x3D; virtual machines, each running its operating system and applications</li>
-</ul>
-<p>This approach helps use resources more efficiently because instead of needing a whole new computer for each task, you can run multiple virtual machines on one physical machine. Virtualization is widely used in modern computing to save money, improve scalability, and increase flexibility in resource use.</p>
-<h3 id="History-of-Virtualization"><a href="#History-of-Virtualization" class="headerlink" title="History of Virtualization"></a>History of Virtualization</h3><p>The concept of virtualization dates back to the 1960s when IBM developed it to improve the efficiency of large mainframe computers. Back then, mainframes were costly and limited, so IBM introduced <strong>virtual machines (VMs)</strong> that allowed different users to run separate workloads on the same physical machine.</p>
-<ul>
-<li><strong>1960s</strong>: IBM introduces virtualization to allow time-sharing on mainframes, giving multiple users the ability to access computing resources simultaneously.</li>
-<li><strong>1970s</strong>: Virtualization remained primarily in mainframe environments, as smaller computers like personal computers (PCs) didn’t need this level of resource sharing.</li>
-<li><strong>1990s</strong>: As PCs grew in power, companies like VMware began to apply virtualization to servers, enabling more efficient use of resources in data centers.</li>
-<li><strong>2000s and Beyond</strong>: Virtualization became mainstream, transforming modern IT infrastructure by enabling <strong>cloud computing</strong>. Today, virtual machines are fundamental to many cloud services, such as Amazon Web Services (AWS) and Microsoft Azure, helping businesses scale efficiently.</li>
-</ul>
-<p>From mainframes to modern cloud computing, virtualization has been key in maximizing hardware utilization, reducing costs, and improving flexibility in IT environments.</p>
-<h1 id="What-is-Containerization"><a href="#What-is-Containerization" class="headerlink" title="What is Containerization?"></a>What is Containerization?</h1><p>Containerization is a technology that allows developers to package an application and all of its dependencies into a single, portable “container.” This container can run consistently on any system that has the container runtime, making it easier to deploy and run applications across different environments, like development, testing, and production.</p>
-<h2 id="Simple-Example-1"><a href="#Simple-Example-1" class="headerlink" title="Simple Example:"></a>Simple Example:</h2><p>Think of containerization like packing a lunchbox:</p>
-<ul>
-<li>You want to bring lunch to work or school. Instead of worrying about whether the fridge or microwave will be available, you pack everything you need (food, utensils, napkins) into a lunchbox.</li>
-<li>Now, no matter where you go, you can enjoy your meal without worrying about the kitchen setup.</li>
-</ul>
-<p>In containerization:</p>
-<ul>
-<li><strong>The lunchbox</strong> &#x3D; the container, which holds everything the application needs to run (code, libraries, dependencies).</li>
-<li><strong>The food and utensils</strong> &#x3D; the application and its dependencies.</li>
-<li><strong>Wherever you go</strong> &#x3D; any computer or server that has a container runtime (like Docker).</li>
-</ul>
-<p>By using containers, you ensure the application behaves the same way, no matter where it’s run. Containers are popular in modern software development because they make it easier to run, test, and deploy applications consistently across different environments.</p>
-<h2 id="History-of-Containerization"><a href="#History-of-Containerization" class="headerlink" title="History of Containerization"></a>History of Containerization</h2><p>Containerization has roots that date back to the early 2000s, though the concept of isolating applications in environments has existed for much longer.</p>
-<ul>
-<li><p><strong>2000s</strong>: The idea of containerization emerged with <strong>Solaris Zones</strong> (2004) and <strong>Linux Containers (LXC)</strong> (2008). These early technologies allowed for the creation of isolated environments on the same system, where applications could run without interfering with one another.</p>
-</li>
-<li><p><strong>2013</strong>: The real breakthrough came with the release of <strong>Docker</strong>, a tool that made containerization simple, portable, and accessible to a wide audience. Docker standardized the container image format and introduced an easy-to-use interface, revolutionizing how developers build, test, and deploy applications.</p>
-</li>
-<li><p><strong>2014 and Beyond</strong>: Following Docker’s success, other technologies like <strong>Kubernetes</strong> (developed by Google) emerged to manage and orchestrate containers at a larger scale. This led to the widespread adoption of containerization across various industries, particularly in cloud computing and DevOps.</p>
-</li>
-</ul>
-<p>Today, containerization is a cornerstone of modern software development, allowing developers to move applications between environments and scale them efficiently and easily.</p>
-<hr>
-<h3 id="Key-Differences-from-Virtualization"><a href="#Key-Differences-from-Virtualization" class="headerlink" title="Key Differences from Virtualization:"></a>Key Differences from Virtualization:</h3><p>While virtualization involves creating multiple virtual machines on one physical machine, <strong>containerization</strong> focuses on packaging just the application and its dependencies into lightweight containers. Unlike virtual machines, containers share the same operating system kernel, making them more efficient regarding resource usage.</p>
-<img src="images/containerization-vs.-virtualization-768x420.png" width="600" />
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/virtualization-containerization/" data-id="cm2440s590009gdqe2wke0ym5" data-title="About Virtualization and Containerization" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373-project/2024/10/11/README/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.079Z" itemprop="datePublished">2024-10-11</time>
+    <a href="/is373-project/2024/10/16/README/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
 </a>
     
   </div>
@@ -673,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/README/">Readme file</a>
+      <a class="p-name article-title" href="/is373-project/2024/10/16/README/">Readme file</a>
     </h1>
   
 
@@ -718,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/README/" data-id="cm2440s500000gdqeab480ine" data-title="Readme file" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/README/" data-id="cm2bqbdl10000jiowh1lyby0i" data-title="Readme file" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -732,8 +142,8 @@
   
     <article id="post-about-12factorapp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373-project/2024/10/11/about-12factorapp/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.079Z" itemprop="datePublished">2024-10-11</time>
+    <a href="/is373-project/2024/10/16/about-12factorapp/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
 </a>
     
   </div>
@@ -744,7 +154,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/about-12factorapp/">About the Twelve Factor App</a>
+      <a class="p-name article-title" href="/is373-project/2024/10/16/about-12factorapp/">About the Twelve Factor App</a>
     </h1>
   
 
@@ -770,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/about-12factorapp/" data-id="cm2440s540001gdqe68awcnxx" data-title="About the Twelve Factor App" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/about-12factorapp/" data-id="cm2bqbdl40001jiow4yx58ck0" data-title="About the Twelve Factor App" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -784,8 +194,8 @@
   
     <article id="post-about-computers-etc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373-project/2024/10/11/about-computers-etc/" class="article-date">
-  <time class="dt-published" datetime="2024-10-11T02:29:45.079Z" itemprop="datePublished">2024-10-11</time>
+    <a href="/is373-project/2024/10/16/about-computers-etc/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
 </a>
     
   </div>
@@ -796,7 +206,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373-project/2024/10/11/about-computers-etc/">About Computing Parts and Concepts</a>
+      <a class="p-name article-title" href="/is373-project/2024/10/16/about-computers-etc/">About Computing Parts and Concepts</a>
     </h1>
   
 
@@ -858,7 +268,600 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yumis56.github.io/is373-project/2024/10/11/about-computers-etc/" data-id="cm2440s550002gdqe87vw9uvh" data-title="About Computing Parts and Concepts" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/about-computers-etc/" data-id="cm2bqbdl60002jiow397xhw2a" data-title="About Computing Parts and Concepts" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-about-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/16/about-docker/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373-project/2024/10/16/about-docker/">About Docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="About-Docker"><a href="#About-Docker" class="headerlink" title="About Docker"></a>About Docker</h1><h2 id="What-is-Docker"><a href="#What-is-Docker" class="headerlink" title="What is Docker?"></a>What is Docker?</h2><img src="/images/docker-logo.png" alt="Docker Logo" width="200" />
+Docker is a *containerization* platform.
+
+<p>  <strong>Containerization</strong>: The process of packaging source code into an executable container</p>
+<ul>
+<li>Kubernetes is used by larger infrastructures and requires at least 3 servers to run applications</li>
+<li>Docker is best for individual users and smaller infrastructures, requires only 1 server</li>
+</ul>
+<p>  <strong>Container</strong>: The executable, packaged source code&#x2F;software. Similar to a Virtual Machine (VM), but does not simulate an entire computer</p>
+<p>  <strong>Registry</strong>: Stores and distributes named Docker images, organized into repositories. Repositories hold versions of an image, identified by tags</p>
+<ul>
+<li>Docker Hub is the official, public registry, and is used by default</li>
+</ul>
+<p>  <strong>Image</strong>: Similar to a snapshot for VMs, it acts as a static template for containers</p>
+<p>  <strong>Layer</strong>: The difference between an old and new image, manually created after using <code>docker commit</code> to commit file changes</p>
+<ul>
+<li><code>docker commit [options/flags] CONTAINER [REPOSITORY[:TAG]]</code></li>
+<li>NOTE: images are static (you cannot edit them), so any changes made must be saved to a new image!</li>
+</ul>
+<p>  <strong>Docker Daemon</strong>: The background process running on the OS, executing Docker tasks. Configured using the Docker Desktop settings page, or through a JSON file</p>
+<p>  <strong>Docker Client</strong>: The primary way of interacting with Docker. The Client sends commands to <code>dockerd</code> (the Docker daemon)</p>
+<ul>
+<li>Client can communicate to multiple daemons</li>
+</ul>
+<h3 id="Why-Docker"><a href="#Why-Docker" class="headerlink" title="Why Docker?"></a>Why Docker?</h3><img src="/images/docker-companies.png" alt="List of companies that use docker like Pintrest, Shopify, Twitter, etc." height="200" />
+Docker is an open-source tool that is compatible with GitHub features. While Kubernetes have greater scaling and is used for larger operations, Docker is ideal for personal use and for smaller companies and cloud infrastructures that prioritize portable workloads.
+
+<h2 id="How-to-Use-Docker"><a href="#How-to-Use-Docker" class="headerlink" title="How to Use Docker"></a>How to Use Docker</h2><h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.docker.com/get-started/">Download Docker</a> for your OS</li>
+<li>Test installation by running <code>docker run hello-world</code></li>
+</ol>
+<h3 id="Running-a-Container"><a href="#Running-a-Container" class="headerlink" title="Running a Container"></a>Running a Container</h3><ol>
+<li><code>docker pull example-image-here</code> to pull an image from the <em>Docker registry</em></li>
+<li><code>docker run example-image-here echo "success message here"</code> to run an image, then echo a message for user-readable feedback<ul>
+<li>Docker container will run and then exit very quickly, so adding a message is useful for notifying the user</li>
+</ul>
+</li>
+</ol>
+<h2 id="Example-Docker-Commands"><a href="#Example-Docker-Commands" class="headerlink" title="Example Docker Commands"></a>Example Docker Commands</h2><p><code>docker images</code></p>
+<ul>
+<li>lists images on the system</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>REPOSITORY</th>
+<th>TAG</th>
+<th>IMAGE ID</th>
+<th>CREATED</th>
+<th>VIRTUAL SIZE</th>
+</tr>
+</thead>
+</table>
+<p><code>docker ps</code></p>
+<ul>
+<li>lists containers that are running</li>
+<li><code>docker ps -a</code> will show all containers, including ones that have exited</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>CONTAINER ID</th>
+<th>IMAGE</th>
+<th>COMMAND</th>
+<th>CREATED</th>
+<th>STATUS</th>
+<th>PORTS</th>
+<th>NAMES</th>
+</tr>
+</thead>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/about-docker/" data-id="cm2bqbdl60003jiow83dw2g1s" data-title="About Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git-github" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/16/git-github/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373-project/2024/10/16/git-github/">About Git and GitHub</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-GitHub"><a href="#Git-GitHub" class="headerlink" title="Git &amp; GitHub"></a>Git &amp; GitHub</h1><ul>
+<li>e.g. For banking, the account balance and banking statement would be a <strong>snapshot</strong>, while transaction history would be <strong>delta storage</strong>.</li>
+</ul>
+<h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><p>Git is  Version Control System (VCS)</p>
+<p><img src="/is373-project/images/git-logo.png" alt="Git Logo"></p>
+<ul>
+<li><em>However</em>, it handles information in a completely different from other VCSs, so you should see Git as a separated concept to avoid confusion</li>
+<li>The main difference is that Git uses <strong>Snapshot storage</strong>, while other VCSs typically use <strong>Delta storage</strong></li>
+</ul>
+<h4 id="Snapshot-storage-vs-Delta-storage"><a href="#Snapshot-storage-vs-Delta-storage" class="headerlink" title="Snapshot storage vs. Delta storage"></a>Snapshot storage vs. Delta storage</h4><ul>
+<li><p><strong>Snapshot storage</strong>: Git stores data as a stream of snapshots.</p>
+<ul>
+<li>Each snapshot represents the system state at a given time</li>
+<li>Git will store unchanged files as a link to the previous identical files</li>
+<li>More simple and efficient, but can consume a lot of storage</li>
+</ul>
+</li>
+<li><p><strong>Delta storage</strong> (delta-based version control): Other VCMs store data based only on file or system changes, rather than the entire state.</p>
+<ul>
+<li><strong>Delta</strong>: The difference between the current version and the previous version</li>
+<li>All the <strong>deltas</strong> are combined to rebuild a system state</li>
+<li>More complex, but can save on storage</li>
+</ul>
+</li>
+</ul>
+<p>Although delta storage is more storage-efficient, snapshot storage makes more sense for getting an accurate, updated representation.</p>
+<p>Now, back to Git:</p>
+<ul>
+<li>Git generally works with your local files and resources; even if you have no internet or VPN access, you can still <code>commit</code> your changes to your local copy<ul>
+<li>Other VCMs may allow file edits, but do not allow “offline” database commits</li>
+</ul>
+</li>
+<li>Everything in Git is <strong>checksummed</strong></li>
+<li>All changes, incomplete transfers, and file corruptions are detected by Git</li>
+<li>Git database stores everything by the <strong>hash value</strong> of its contents, not by file names</li>
+<li>Git generally only <code>add</code> data, which improves data recovery by making it difficult to erase committed data</li>
+</ul>
+<p>Git is the VCS, and GitHub is the one of many remote repository hosting sites.</p>
+<hr>
+<h2 id="What-is-GitHub"><a href="#What-is-GitHub" class="headerlink" title="What is GitHub?"></a>What is GitHub?</h2><p>GitHub is a web-based service for hosting <strong>remote repositories</strong></p>
+<p><img src="/is373-project/images/github-logo.png" alt="GitHub Logo"></p>
+<ul>
+<li>You can use Git without GitHub, but GitHub needs Git to work</li>
+</ul>
+<p>So, why bother using GitHub?</p>
+<ul>
+<li>Collaboration and Project Management: GitHub improves team collaboration with features like pull requests, code reviews, and issue tracking, as well as tracking commit histories to quantify individual contribution</li>
+<li>Access Control: You can choose the visibility and access rights of your code</li>
+<li>Documentation: GitHub Wikis and readme.md files are available as documentation tools  </li>
+<li>Remote repository backup: Even if your machine spontaneously combusts (or you lose your local directory in any way), as long as you have committed your local changes to the remote repository, you will be able to restore your files and directories from anywhere else!</li>
+<li><strong>CI&#x2F;CD</strong>: Continues Integration and Continuous Delivery. You can use <strong>GitHub Actions</strong> to automate your workflow to build, test, and deploy</li>
+<li>Portfolio &#x2F; Networking: Remote repositories allow sharing of resources, contributions to public projects, and also allow you to showcase your projects and portfolio to peers and companies alike</li>
+<li>Web UI: GitHub has a user-friendly web interface, which is a helpful addition to command line controls</li>
+</ul>
+<h2 id="The-3-Git-workflow-steps"><a href="#The-3-Git-workflow-steps" class="headerlink" title="The 3 Git workflow steps"></a>The 3 Git workflow steps</h2><p><img src="/is373-project/images/git-stages.png" alt="Git staging steps"></p>
+<ul>
+<li><strong>Working Directory</strong>: The working directory, or working tree, is a <code>checkout</code> of a single version (branch) of a project. The files are pulled from a Git directory and placed on the local disk to be used or modified</li>
+<li><strong>Staging Area &#x2F; Index</strong>: The staging area stores the changes to be committed. It <em>only</em> prepares to commit changes that you have added for tracking</li>
+<li><strong>Repository &#x2F; Git Directory</strong>: After staging all the desired changes, the changes are then committed and then pushed to the Git Directory as a permanent snapshot</li>
+</ul>
+<h2 id="Set-Up-Git-and-GitHub"><a href="#Set-Up-Git-and-GitHub" class="headerlink" title="Set Up Git and GitHub"></a>Set Up Git and GitHub</h2><h3 id="1-Download-Git"><a href="#1-Download-Git" class="headerlink" title="1. Download Git"></a>1. <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Download Git</a></h3><h3 id="2-Set-a-Git-username"><a href="#2-Set-a-Git-username" class="headerlink" title="2. Set a Git username"></a>2. Set a Git username</h3><ul>
+<li>Open a terminal</li>
+<li>to set the username for all repositories, use <code>git config --global user.name "Username Here"</code><ul>
+<li>e.g.</li>
+<li><code>git config --global user.name "Jay Doe"</code></li>
+<li><code>git config --global user.name "username123"</code></li>
+<li>To set for a single repository, simple exclude the –global tag</li>
+</ul>
+</li>
+<li>Typing <code>git config --global user.name</code> should return your username</li>
+</ul>
+<h3 id="3-Set-a-Git-email"><a href="#3-Set-a-Git-email" class="headerlink" title="3. Set a Git email"></a>3. Set a Git email</h3><ul>
+<li>From terminal, type <code>git config --global user.email "your_email@here"</code><ul>
+<li>Once again, exclude the –global tag to set email for only 1 repository</li>
+</ul>
+</li>
+<li>Typing <code>git config --global user.email</code> should return your email address</li>
+<li>You will also add this email address to your GitHub account!</li>
+</ul>
+<h3 id="4-Set-up-a-GitHub-account"><a href="#4-Set-up-a-GitHub-account" class="headerlink" title="4. Set up a GitHub account"></a>4. Set up a GitHub account</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/">Sign up for GitHub</a> and follow the prompts</li>
+<li>Verify your email address to access the neccessary features</li>
+</ul>
+<h3 id="5-Generate-an-SSH"><a href="#5-Generate-an-SSH" class="headerlink" title="5. Generate an SSH"></a>5. Generate an SSH</h3><ul>
+<li>From your terminal, type <code>ssh-keygen -t ed25519 -C "<a href="mailto:&#121;&#111;&#117;&#x72;&#x5f;&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#121;&#111;&#117;&#x72;&#x5f;&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a>"</code> with the email you use for GitHub<ul>
+<li>If the Ed25519 algorithm is not supported, you can use <code>ssh-keygen -t rsa -b 4096 -C "<a href="mailto:&#121;&#x6f;&#x75;&#114;&#95;&#x65;&#x6d;&#97;&#x69;&#x6c;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#121;&#x6f;&#x75;&#114;&#95;&#x65;&#x6d;&#97;&#x69;&#x6c;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a>"</code></li>
+</ul>
+</li>
+<li>Press enter to accept the default location. If you already have an SSH key with an identical name, we reccomend choosing a custom name for your key, to avoid overwriting any existing keys<ul>
+<li>You can choose a passphrase or simply press enter to skip adding a passphrase</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-Add-SSH-Key-to-GitHub"><a href="#6-Add-SSH-Key-to-GitHub" class="headerlink" title="6. Add SSH Key to GitHub"></a>6. Add SSH Key to GitHub</h3><ul>
+<li>From terminal, type <code>cat ~/.ssh/your_sshkey_name_here.pub</code> with the file path of your public key file</li>
+<li>PLEASE MAKE SURE it ends with .pub, otherwise you may expose your private SSH key !!</li>
+<li>Copy the displayed file contents</li>
+<li>You can also open the .pub file in any text editor to copy the contents directly</li>
+<li>On GitHub, access your <strong>Settings</strong></li>
+<li>Under <strong>Access</strong> section of the sidebar, click <strong>SSH and GPG keys</strong></li>
+<li>Click <strong>New SSH key</strong> or <strong>Add SSH key</strong></li>
+<li>Paste your key into the “Key” file</li>
+<li>Give your key an identifiable nickname, e.g. the name of your class</li>
+</ul>
+<hr>
+<h2 id="Other-Resources"><a href="#Other-Resources" class="headerlink" title="Other Resources"></a>Other Resources</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.git-init.com/snapshot-vs-delta-storage/">https://blog.git-init.com/snapshot-vs-delta-storage/</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/about-github-actions/understanding-github-actions">https://docs.github.com/en/actions/about-github-actions/understanding-github-actions</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/git-github/" data-id="cm2bqbdl70004jiowdnz85mgr" data-title="About Git and GitHub" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/16/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373-project/2024/10/16/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/hello-world/" data-id="cm2bqbdl80005jiowhzya9ct6" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-links-citations" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/16/links-citations/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Citations"><a href="#Citations" class="headerlink" title="Citations"></a>Citations</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://middleware.io/blog/containerization/">https://middleware.io/blog/containerization/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://penchev.com/posts/twelve-factor-app-in-2023/">https://penchev.com/posts/twelve-factor-app-in-2023/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://digital.gov/resources/an-introduction-github/">https://digital.gov/resources/an-introduction-github/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.techtarget.com/searchdatacenter/definition/Ubuntu">https://www.techtarget.com/searchdatacenter/definition/Ubuntu</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://12factor.net/">https://12factor.net/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://medium.com/@csw11235/understanding-the-12-factor-app-methodology-why-we-build-cloud-applications-the-way-we-do-7aed4a98fbd8">https://medium.com/@csw11235/understanding-the-12-factor-app-methodology-why-we-build-cloud-applications-the-way-we-do-7aed4a98fbd8</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.martinfowler.com/">https://www.martinfowler.com/</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/links-citations/" data-id="cm2bqbdl80006jiowap0wgtr6" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-setup-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/16/setup-ubuntu/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373-project/2024/10/16/setup-ubuntu/">Set Up Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Ubuntu-Set-Up-Guide"><a href="#Ubuntu-Set-Up-Guide" class="headerlink" title="Ubuntu Set-Up Guide"></a>Ubuntu Set-Up Guide</h1><img src="/images/ubuntu-logo.png" alt="Ubuntu Logo" width="150" />
+
+<hr>
+<h2 id="WSL2-Set-Up-Tutorial-for-Windows"><a href="#WSL2-Set-Up-Tutorial-for-Windows" class="headerlink" title="WSL2 Set-Up Tutorial for Windows"></a>WSL2 Set-Up Tutorial for Windows</h2><p>WSL: Windows Subsystem for Linux</p>
+<h3 id="What-you-will-need-beforehand"><a href="#What-you-will-need-beforehand" class="headerlink" title="What you will need beforehand:"></a>What you will need beforehand:</h3><ul>
+<li>Windows 10&#x2F;11 on virutal or physical machine</li>
+<li>Windows updated to most recent version</li>
+</ul>
+<p><strong>1. Installing WSL2</strong></p>
+<ul>
+<li>The first step to installing Ubuntu on your machine is installing WSL2 on your computer. WSL2 stands for Windows Subsystem for Linux, and it allows you to run a Linux environment on your computer without having to have a separate virtual machine.</li>
+<li>To install WSL2, you have to open Windows Terminal on your device as an adminstrator. Then enter <code> wsl --install </code>. </li>
+<li>Once it has installed, you must restart your device.</li>
+</ul>
+<p><strong>2. Installing Ubuntu</strong><br>The second step for installing Ubuntu is installing a version of Ubuntu onto WSL. We will be using a method that allows you to install Ubuntu from the command line. </p>
+<ul>
+<li>First, you must open Windows Terminal and enter <code> wsl --list --online </code> to see on the available versions of Ubuntu that you are able to install.</li>
+<li>Once you have found the version that you like, you must type the name of the version that you want and then enter the following: <code> wsl --install -d (name of installation) </code></li>
+<li>If successful, you will see a progress bar appear showing that the installation is in progress.</li>
+</ul>
+<p><strong>3. Running Ubuntu</strong><br>The final step for installing Ubuntu is running it on your machine and making sure it is functional. </p>
+<ul>
+<li>To do that, you must open Powershell terminal and type in the version of Ubuntu you installed, for example: <code> ubuntu2404.exe </code></li>
+<li>The Ubuntu terminal should start running, and if it has, then you have successfully installed Ubuntu!</li>
+<li>Once it is installed, the system will prompt you to create a username and password. Make sure to write the username and password somewhere secure so then if you forget your information, you are able to retrieve it.</li>
+<li>Optionally, you should also run updates for your Ubuntu terminal to make sure that it is up to date. You can run updates by entering the following:<br><code> sudo apt update </code><br><code> sudo apt full-upgrade -y </code></li>
+<li>It will prompt you to enter your password for the updates.</li>
+</ul>
+<h3 id="After-following-these-steps-you-should-have-a-fully-functional-Ubuntu-system-on-your-machine"><a href="#After-following-these-steps-you-should-have-a-fully-functional-Ubuntu-system-on-your-machine" class="headerlink" title="After following these steps, you should have a fully functional Ubuntu system on your machine!"></a>After following these steps, you should have a fully functional Ubuntu system on your machine!</h3><hr>
+<h2 id="Virtual-Box-Set-Up-macOS-and-Windows"><a href="#Virtual-Box-Set-Up-macOS-and-Windows" class="headerlink" title="Virtual Box Set-Up (macOS and Windows)"></a>Virtual Box Set-Up (macOS and Windows)</h2><p><img src="/images/virtualbox-logo.png" alt="VirtualBox Old Logo Logo" height="150" /> <img src="/images/virtualbox-logo-2024.png" alt="VirtualBox New 2024+ Logo" height="150" /></p>
+<h3 id="Initial-Set-Up"><a href="#Initial-Set-Up" class="headerlink" title="Initial Set-Up"></a>Initial Set-Up</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">Download Oracle Virtual Box</a> for the machine you are currently using (e.g. MacBook would download the macOS package)</li>
+<li><a target="_blank" rel="noopener" href="https://releases.ubuntu.com/jammy/">Download Ubuntu [22.04.5 LTS (Jammy Jellyfish)]</a><ul>
+<li>Select the image required. If unsure, download the <strong>Desktop Image</strong></li>
+<li>If you need both, you can always add server packages to a Desktop Image, and vice versa, so the order does not matter</li>
+</ul>
+</li>
+</ol>
+<h3 id="Set-Up-Ubuntu-in-Virtual-Box"><a href="#Set-Up-Ubuntu-in-Virtual-Box" class="headerlink" title="Set Up Ubuntu in Virtual Box"></a>Set Up Ubuntu in Virtual Box</h3><p>When you open your Oracle VM Virtual Box, it will look like this:</p>
+<p><img src="/is373-project/images/blank-virtual-box.png" alt="Screenshot of Oracle VM Virtual Box, with no Virtual Machines (VMs) yet"></p>
+<ol>
+<li>Click <strong>‘New’</strong> to create a new Virtual Machine (VM)<br>First, you will choose and name your VM.</li>
+</ol>
+<p><img src="/is373-project/images/vm-setup-1.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
+<ul>
+<li><strong>Name</strong>: This is where you add an identifiable name&#x2F;nickname for your VM</li>
+<li><strong>Folder&#x2F;Machine Folder</strong>: This is where you select your VM’s location. You can choose any location that has enough space</li>
+<li><strong>ISO Image</strong>: If this field is available, you may select the Ubuntu image that you downloaded in the previous steps, and it will automatically set the <strong>Type</strong> and <strong>Version</strong> for you. If not, continue to:</li>
+<li><strong>Type</strong>: This is where you select the desired OS for your VM. Choose <strong>‘Linux’</strong></li>
+<li><strong>Version</strong>: This is where you select the version of your OS. Choose <strong>‘Ubuntu (64-bit)’</strong></li>
+</ul>
+<p>  Click <strong>‘Next’</strong></p>
+<ol start="2">
+<li>a. You may or may not get get a “Unattended Guest OS Install Setup” screen</li>
+</ol>
+<p><img src="/is373-project/images/vm-setup-2.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
+<ul>
+<li>If you get this screen, you may click <strong>‘Next’</strong></li>
+<li>Note: by default, username is <strong>“vboxuser”</strong> and password is <strong>“changeme”</strong></li>
+</ul>
+<ol start="2">
+<li>b. Hardware &#x2F; Memory Size<br>A portion of your machine’s resources will be dedicated to the VM.</li>
+</ol>
+<p><img src="/is373-project/images/vm-setup-3.png" alt="Screenshot of Oracle VM Virtual Box Hardware setup page"></p>
+<ul>
+<li><p>You may have different options depending on your machine</p>
+</li>
+<li><p>For allocating resources, choose the highest amount possible within the green “reccomendation” zone</p>
+<p>Click <strong>‘Next’</strong></p>
+</li>
+</ul>
+<ol start="3">
+<li>Virtual Hard Disk + location and size</li>
+</ol>
+<ul>
+<li>Select <strong>‘Create a Virtual Hard Disk Now’</strong></li>
+<li>If asked for a hard disk type, choose any</li>
+<li>If asked, leave default <strong>‘Dynamically allocated’</strong> over <strong>Fixed size</strong></li>
+<li>Choose <strong>30.00 GB</strong> as the maximum amount of file data that the VM may store on the hard drive</li>
+</ul>
+<p><img src="/is373-project/images/vm-setup-4.png" alt="Screenshot of Oracle VM Virtual Box new VM, first screen"></p>
+<p>  Click <strong>‘Next’</strong></p>
+<ol start="4">
+<li>Click <strong>‘Create’</strong> or <strong>‘Finish’</strong> to complete your new Ubuntu VM!</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/setup-ubuntu/" data-id="cm2bqbdl90007jiowbg9r3z0s" data-title="Set Up Ubuntu" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-test-post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/16/test-post/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373-project/2024/10/16/test-post/">Test Post</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="this-is-to-test-post-generation"><a href="#this-is-to-test-post-generation" class="headerlink" title="this is to test post generation"></a>this is to test post generation</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/test-post/" data-id="cm2bqbdl90008jiow7w2a36st" data-title="Test Post" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-virtualization-containerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373-project/2024/10/16/virtualization-containerization/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T10:28:13.957Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373-project/2024/10/16/virtualization-containerization/">About Virtualization and Containerization</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="What-is-Virtualization"><a href="#What-is-Virtualization" class="headerlink" title="What is Virtualization?"></a>What is Virtualization?</h1><p>Virtualization is a technology that allows one physical machine (like your computer) to act as if it were multiple separate computers, called “virtual machines” (VMs). Each virtual machine runs its operating system and applications, but they all share the physical resources of the host machine, such as CPU, memory, and storage.</p>
+<h2 id="Simple-Example"><a href="#Simple-Example" class="headerlink" title="Simple Example:"></a>Simple Example:</h2><p>Imagine you have a house with one big room, but you want to create different workspaces for different tasks, like a kitchen, an office, and a bedroom. Instead of building separate rooms, you could use room dividers to create separate areas within the same space. Each area serves a different purpose, but they all share the same overall space.</p>
+<p>In virtualization:</p>
+<ul>
+<li><strong>The house</strong> &#x3D; the physical machine (your computer or server)</li>
+<li><strong>Room dividers</strong> &#x3D; virtualization software (called a “hypervisor”)</li>
+<li><strong>Separate areas</strong> &#x3D; virtual machines, each running its operating system and applications</li>
+</ul>
+<p>This approach helps use resources more efficiently because instead of needing a whole new computer for each task, you can run multiple virtual machines on one physical machine. Virtualization is widely used in modern computing to save money, improve scalability, and increase flexibility in resource use.</p>
+<h3 id="History-of-Virtualization"><a href="#History-of-Virtualization" class="headerlink" title="History of Virtualization"></a>History of Virtualization</h3><p>The concept of virtualization dates back to the 1960s when IBM developed it to improve the efficiency of large mainframe computers. Back then, mainframes were costly and limited, so IBM introduced <strong>virtual machines (VMs)</strong> that allowed different users to run separate workloads on the same physical machine.</p>
+<ul>
+<li><strong>1960s</strong>: IBM introduces virtualization to allow time-sharing on mainframes, giving multiple users the ability to access computing resources simultaneously.</li>
+<li><strong>1970s</strong>: Virtualization remained primarily in mainframe environments, as smaller computers like personal computers (PCs) didn’t need this level of resource sharing.</li>
+<li><strong>1990s</strong>: As PCs grew in power, companies like VMware began to apply virtualization to servers, enabling more efficient use of resources in data centers.</li>
+<li><strong>2000s and Beyond</strong>: Virtualization became mainstream, transforming modern IT infrastructure by enabling <strong>cloud computing</strong>. Today, virtual machines are fundamental to many cloud services, such as Amazon Web Services (AWS) and Microsoft Azure, helping businesses scale efficiently.</li>
+</ul>
+<p>From mainframes to modern cloud computing, virtualization has been key in maximizing hardware utilization, reducing costs, and improving flexibility in IT environments.</p>
+<h1 id="What-is-Containerization"><a href="#What-is-Containerization" class="headerlink" title="What is Containerization?"></a>What is Containerization?</h1><p>Containerization is a technology that allows developers to package an application and all of its dependencies into a single, portable “container.” This container can run consistently on any system that has the container runtime, making it easier to deploy and run applications across different environments, like development, testing, and production.</p>
+<h2 id="Simple-Example-1"><a href="#Simple-Example-1" class="headerlink" title="Simple Example:"></a>Simple Example:</h2><p>Think of containerization like packing a lunchbox:</p>
+<ul>
+<li>You want to bring lunch to work or school. Instead of worrying about whether the fridge or microwave will be available, you pack everything you need (food, utensils, napkins) into a lunchbox.</li>
+<li>Now, no matter where you go, you can enjoy your meal without worrying about the kitchen setup.</li>
+</ul>
+<p>In containerization:</p>
+<ul>
+<li><strong>The lunchbox</strong> &#x3D; the container, which holds everything the application needs to run (code, libraries, dependencies).</li>
+<li><strong>The food and utensils</strong> &#x3D; the application and its dependencies.</li>
+<li><strong>Wherever you go</strong> &#x3D; any computer or server that has a container runtime (like Docker).</li>
+</ul>
+<p>By using containers, you ensure the application behaves the same way, no matter where it’s run. Containers are popular in modern software development because they make it easier to run, test, and deploy applications consistently across different environments.</p>
+<h2 id="History-of-Containerization"><a href="#History-of-Containerization" class="headerlink" title="History of Containerization"></a>History of Containerization</h2><p>Containerization has roots that date back to the early 2000s, though the concept of isolating applications in environments has existed for much longer.</p>
+<ul>
+<li><p><strong>2000s</strong>: The idea of containerization emerged with <strong>Solaris Zones</strong> (2004) and <strong>Linux Containers (LXC)</strong> (2008). These early technologies allowed for the creation of isolated environments on the same system, where applications could run without interfering with one another.</p>
+</li>
+<li><p><strong>2013</strong>: The real breakthrough came with the release of <strong>Docker</strong>, a tool that made containerization simple, portable, and accessible to a wide audience. Docker standardized the container image format and introduced an easy-to-use interface, revolutionizing how developers build, test, and deploy applications.</p>
+</li>
+<li><p><strong>2014 and Beyond</strong>: Following Docker’s success, other technologies like <strong>Kubernetes</strong> (developed by Google) emerged to manage and orchestrate containers at a larger scale. This led to the widespread adoption of containerization across various industries, particularly in cloud computing and DevOps.</p>
+</li>
+</ul>
+<p>Today, containerization is a cornerstone of modern software development, allowing developers to move applications between environments and scale them efficiently and easily.</p>
+<hr>
+<h3 id="Key-Differences-from-Virtualization"><a href="#Key-Differences-from-Virtualization" class="headerlink" title="Key Differences from Virtualization:"></a>Key Differences from Virtualization:</h3><p>While virtualization involves creating multiple virtual machines on one physical machine, <strong>containerization</strong> focuses on packaging just the application and its dependencies into lightweight containers. Unlike virtual machines, containers share the same operating system kernel, making them more efficient regarding resource usage.</p>
+<img src="images/containerization-vs.-virtualization-768x420.png" width="600" />
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yumis56.github.io/is373-project/2024/10/16/virtualization-containerization/" data-id="cm2bqbdla0009jiow2dac42si" data-title="About Virtualization and Containerization" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -901,23 +904,23 @@
       <ul>
         
           <li>
-            <a href="/is373-project/2024/10/11/about-docker/">About Docker</a>
+            <a href="/is373-project/2024/10/16/README/">Readme file</a>
           </li>
         
           <li>
-            <a href="/is373-project/2024/10/11/git-github/">About Git and GitHub</a>
+            <a href="/is373-project/2024/10/16/about-12factorapp/">About the Twelve Factor App</a>
           </li>
         
           <li>
-            <a href="/is373-project/2024/10/11/hello-world/">Hello World</a>
+            <a href="/is373-project/2024/10/16/about-computers-etc/">About Computing Parts and Concepts</a>
           </li>
         
           <li>
-            <a href="/is373-project/2024/10/11/links-citations/">(no title)</a>
+            <a href="/is373-project/2024/10/16/about-docker/">About Docker</a>
           </li>
         
           <li>
-            <a href="/is373-project/2024/10/11/setup-ubuntu/">Set Up Ubuntu</a>
+            <a href="/is373-project/2024/10/16/git-github/">About Git and GitHub</a>
           </li>
         
       </ul>
