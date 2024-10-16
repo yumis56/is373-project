@@ -87,15 +87,12 @@ jobs:
       - name: Run Playwright tests in Docker
         run: |
           # This one is functioning, but I want to set conditionals
-          #docker run --rm playwright-tests > playwright-results.txt || true
-
-          #cd is373-project
-          #docker run --rm -v  $GITHUB_WORKSPACE/is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
+          docker run --rm playwright-tests > playwright-results.txt || true
           
-          container_id=$(docker run -d -v ${{ github.workspace }}/is373-devops/test-results:/test-results playwright-tests)
-          docker wait $container_id
-          docker cp $container_id:/app/test-results/playwright-results.txt ${{ github.workspace }}/is373-devops/test-results/playwright-results.txt
-          docker rm $container_id
+          #container_id=$(docker run -d -v ${{ github.workspace }}/is373-project/results:/results playwright-tests)
+          #docker wait $container_id
+          #docker cp $container_id:/results/playwright-results.txt ${{ github.workspace }}/is373-project/test-results/playwright-results.txt
+          #docker rm $container_id
           
       - name: Save Test Results
         run: |
@@ -106,8 +103,8 @@ jobs:
           
           git pull origin main
           
-          git add test-results/playwright-results.txt
-          git commit -m "Add test results from is373-project"
+          git add playwright-results.txt
+          git commit -m "Add test results"
           git push origin main
 
       - name: Upload test results
@@ -133,7 +130,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-test
-    if: success() # TODO still figuring out playwright implementation
+    #if: success() # TODO still figuring out playwright implementation
     #if: success() && needs.build-and-test.outputs.playwright-tests == 'true'
 
     steps:
