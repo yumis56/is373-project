@@ -89,7 +89,7 @@ jobs:
           # This one is functioning, but I want to set conditionals
           #docker run --rm playwright-tests > playwright-results.txt || true
 
-          RESULT_FILE="../test-repo/test-results/playwright-results.txt"
+          RESULT_FILE="../is373-devops/test-results/playwright-results.txt"
 
 
           if docker run --rm -v ../is373-devops/test-results:/app/test-results playwright-tests > "$RESULT_FILE"; then
