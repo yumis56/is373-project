@@ -93,19 +93,20 @@ jobs:
           #docker wait $container_id
           #docker cp $container_id:/results/playwright-results.txt ${{ github.workspace }}/is373-project/test-results/playwright-results.txt
           #docker rm $container_id
-          
-      - name: Save Test Results
-        run: |
-          cd is373-devops
-          
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          git pull origin main
-          
-          git add playwright-results.txt
-          git commit -m "Add test results"
-          git push origin main
+
+      # TODO: figure out how to save from Docker    
+      #- name: Save Test Results
+      #  run: |
+      #    cd is373-devops
+      #    
+      #    git config --local user.email "action@github.com"
+      #    git config --local user.name "GitHub Action"
+      #    
+      #    git pull origin main
+      #    
+      #    git add playwright-results.txt
+      #    git commit -m "Add test results"
+      #    git push origin main
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
