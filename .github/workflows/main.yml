@@ -17,11 +17,13 @@ jobs:
       steps:
         - name: Check GitHub PAT
           run: |
-            RESPONSE=$(curl -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" https://api.github.com/user)
-            if [[ "$RESPONSE" == *"\"login\":"* ]]; then
-              echo "PAT is valid. User info: $RESPONSE"
+            git config --global user.name "GitHub Action"
+            git config --global user.email "action@github.com"
+            RESPONSE=$(git ls-remote https://github.com/yumis56/is373-devops.git)
+            if [[ $? -eq 0 ]]; then
+              echo "PAT is valid."
             else
-              echo "Invalid PAT. Response: $RESPONSE"
+              echo "Invalid PAT."
               exit 1
             fi
 
