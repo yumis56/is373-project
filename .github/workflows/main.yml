@@ -89,8 +89,8 @@ jobs:
           # This one is functioning, but I want to set conditionals
           #docker run --rm playwright-tests > playwright-results.txt || true
 
-          cd is373-project
-          docker run --rm -v is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
+          #cd is373-project
+          docker run --rm -v  $GITHUB_WORKSPACE/is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
           
       - name: Save Test Results
         run: |
