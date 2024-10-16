@@ -110,12 +110,12 @@ jobs:
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-results
-          path: $GITHUB_WORKSPACE/is373-devops/test-results/playwright-results.txt
-          if-no-files-found: warn
-          compression-level: 6
-          overwrite: false
-          include-hidden-files: false
+            name: playwright-results
+            path: playwright-results.txt
+            if-no-files-found: warn
+            compression-level: 6
+            overwrite: false
+            include-hidden-files: false
 
       #playwright end
 
