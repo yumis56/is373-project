@@ -127,8 +127,6 @@ jobs:
       - name: Print artifact URL
         run: |
           echo "Artifact URL: ${{ env.ARTIFACT_URL }}"
-  
-      #${{ env.ARTIFACT_URL }}
 
       - name: Download test results
         run: |
