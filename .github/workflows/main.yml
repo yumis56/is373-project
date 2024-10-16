@@ -90,7 +90,7 @@ jobs:
           #docker run --rm playwright-tests > playwright-results.txt || true
 
           #cd is373-project
-          docker run --rm -v  $GITHUB_WORKSPACE/is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
+          #docker run --rm -v  $GITHUB_WORKSPACE/is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
           
           container_id=$(docker run -d -v ${{ github.workspace }}/is373-devops/test-results:/test-results playwright-tests)
           docker wait $container_id
