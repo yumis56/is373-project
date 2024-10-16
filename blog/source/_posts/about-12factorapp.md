@@ -2,7 +2,7 @@
 title: About the Twelve Factor App
 ---
 
-# About The Twelve Factor App
+# The Twelve Factor App
 ## What is the Twelve Factor App?
 
 The Twelve Factor App is a set of standards regarding how to build an application. They have been created over time by developers who have worked on numerous apps, and want to help other developers avoid common issues when building apps, provide definitions for terminology, and offer solutions to problems that a developer might face in the development process. As the title states, it gives twelve different steps from beginning to end on how to build an application, and goes into depth of each step and why it is necessary to go through it. 

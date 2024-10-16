@@ -2,9 +2,6 @@
 title: About Git and GitHub
 ---
 # Git & GitHub
-
-
-- e.g. For banking, the account balance and banking statement would be a **snapshot**, while transaction history would be **delta storage**.
 ## What is Git?
 Git is  Version Control System (VCS)
 
@@ -25,6 +22,7 @@ Git is  Version Control System (VCS)
     - More complex, but can save on storage
 
 Although delta storage is more storage-efficient, snapshot storage makes more sense for getting an accurate, updated representation.
+- e.g. For banking, the account balance and banking statement would be a **snapshot**, while transaction history would be **delta storage**.
 
 Now, back to Git:
 

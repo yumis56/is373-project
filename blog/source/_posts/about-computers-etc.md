@@ -2,7 +2,7 @@
 title: About Computing Parts and Concepts
 ---
 
-# About Computing Parts and Concepts
+# Computing Parts and Concepts
 
 ## CPU
 Central Processing Unit (processor)

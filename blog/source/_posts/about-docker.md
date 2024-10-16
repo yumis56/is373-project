@@ -1,8 +1,7 @@
 ---
 title: About Docker
 ---
-
-# About Docker
+# Docker
 ## What is Docker?
 <img src="/images/docker-logo.png" alt="Docker Logo" width="200" />
 Docker is a *containerization* platform.
