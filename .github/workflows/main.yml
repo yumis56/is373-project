@@ -83,6 +83,10 @@ jobs:
         working-directory: is373-devops
         run: |
           docker build -t playwright-tests .
+
+      # TODO newest
+      - name: Create Results Directory
+        run: mkdir -p ../is373-devops/test-results
       
       - name: Run Playwright tests in Docker
         run: |
@@ -104,7 +108,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results
-          path: playwright-results.txt
+          path: ../is373-devops/test-results/playwright-results.txt
       #playwright end
 
      
