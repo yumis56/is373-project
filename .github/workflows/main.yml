@@ -153,7 +153,7 @@ jobs:
               git checkout -b results
           fi
           
-          git add test-results/playwright-results.txt
+          git add is373-devops/test-results/playwright-results.txt
           git commit -m "Add Playwright test results"
           git push origin results
      
