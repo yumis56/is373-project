@@ -89,30 +89,16 @@ jobs:
           # This one is functioning, but I want to set conditionals
           #docker run --rm playwright-tests > playwright-results.txt || true
 
-          if docker run --rm -v ../is373-devops/test-results:/app/test-results playwright-tests > playwright-results.txt; then
+          RESULT_FILE="../test-repo/test-results/playwright-results.txt"
+
+
+          if docker run --rm -v ../is373-devops/test-results:/app/test-results playwright-tests > "$RESULT_FILE"; then
             echo "playwright-tests=true" >> $GITHUB_ENV
             echo "SUCCESS: Check report in is373-devops/test-results/playwright-results.txt"
           else
             echo "playwright-tests=false" >> $GITHUB_ENV
             echo "FAILURE: Check report in is373-devops/test-results/playwright-results.txt"
           fi
-    
-   
-      #- name: Install Playwright dependencies
-      #  working-directory: is373-devops
-      #  run: |
-      #    npx playwright install-deps
-      #    npm ci
-        
-      #- name: Install Playwright browsers
-        #working-directory: is373-devops
-        #run: npx playwright install
-
-      #- name: Run Playwright tests
-        #working-directory: is373-devops
-        #id: playwright-tests
-        #run: npx playwright test --config=playwright.config.ts --reporter=list > playwright-results.txt || true
-      #testing end
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
