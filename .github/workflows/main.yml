@@ -90,7 +90,7 @@ jobs:
           #docker run --rm playwright-tests > playwright-results.txt || true
 
           cd is373-project
-          docker run --rm -v ${{ github.workspace }}/is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
+          docker run --rm -v is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
           
       - name: Save Test Results
         run: |
