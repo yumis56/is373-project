@@ -118,9 +118,15 @@ jobs:
             compression-level: 6
             overwrite: false
             include-hidden-files: false
-            run: echo "ARTIFACT_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-artifact.outputs.artifact_id }}" >> $GITHUB_ENV
+
+      - name: Save artifact URL
+        run: |
+          echo "ARTIFACT_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-artifact.outputs.artifact_id }}" >> $GITHUB_ENV
 
       #playwright end
+      - name: Print artifact URL
+        run: |
+          echo "Artifact URL: ${{ env.ARTIFACT_URL }}"
   
       #${{ env.ARTIFACT_URL }}
 
