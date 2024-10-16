@@ -27,7 +27,6 @@ jobs:
               exit 1
             fi
 
-
 #######
   build-and-test:
     needs: verify-token
