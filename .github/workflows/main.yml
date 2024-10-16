@@ -92,6 +92,11 @@ jobs:
           #cd is373-project
           docker run --rm -v  $GITHUB_WORKSPACE/is373-devops/test-results:/test-results playwright-tests > /test-results/playwright-results.txt
           
+          container_id=$(docker run -d -v ${{ github.workspace }}/is373-devops/test-results:/test-results playwright-tests)
+          docker wait $container_id
+          docker cp $container_id:/path/to/results/playwright-results.txt ${{ github.workspace }}/is373-devops/test-results/playwright-results.txt
+          docker rm $container_id
+          
       - name: Save Test Results
         run: |
           cd is373-devops
