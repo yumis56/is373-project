@@ -155,7 +155,8 @@ jobs:
           
           git add is373-devops/test-results/playwright-results.txt
           git commit -m "Add Playwright test results"
-          git push origin results
+          #git push origin results
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/yumis56/is373-devops.git results
      
       - name: Stop Hexo server
         working-directory: ./blog
