@@ -140,15 +140,22 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          git checkout results
-          git pull origin results
+          #git checkout results
+          #git pull origin results
+          #git add is373-devops/test-results/playwright-results.txt
+          #git commit -m "Add Playwright test results"
+          #git push origin results
           
+          if git show-ref --quiet refs/heads/results; then
+              git checkout results
+              git pull origin results
+          else
+              git checkout -b results
+          fi
           
-          git add is373-devops/test-results/playwright-results.txt
+          git add test-results/playwright-results.txt
           git commit -m "Add Playwright test results"
           git push origin results
-          #git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/yumis56/is373-devops.git main
-
      
       - name: Stop Hexo server
         working-directory: ./blog
