@@ -86,17 +86,19 @@ jobs:
 
       # TODO newest
       - name: Create Results Directory
-        run: mkdir -p ../is373-devops/test-results
+        run: mkdir -p "$GITHUB_WORKSPACE/is373-devops/test-results"
       
       - name: Run Playwright tests in Docker
         run: |
           # This one is functioning, but I want to set conditionals
           #docker run --rm playwright-tests > playwright-results.txt || true
 
-          RESULT_FILE="../is373-devops/test-results/playwright-results.txt"
+          RESULTS_FILE="/app/is373-devops/test-results/playwright-results.txt"
 
-
-          if docker run --rm -v ../is373-devops/test-results:/app/test-results playwright-tests > "$RESULT_FILE"; then
+          if docker run --rm \
+            -v "$GITHUB_WORKSPACE/is373-project/test-results:/app/test-results" \
+            -v "$GITHUB_WORKSPACE/is373-devops:/app/is373-devops" \
+            playwright-tests > "$RESULTS_FILE"; then
             echo "playwright-tests=true" >> $GITHUB_ENV
             echo "SUCCESS: Check report in is373-devops/test-results/playwright-results.txt"
           else
@@ -108,7 +110,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results
-          path: ../is373-devops/test-results/playwright-results.txt
+          path: $GITHUB_WORKSPACE/testing-repo/test-results/playwright-results.txt
+          if-no-files-found: warn
+          compression-level: 6
+          overwrite: false
+          include-hidden-files: false
+
       #playwright end
 
      
