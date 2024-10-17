@@ -116,6 +116,10 @@ jobs:
           #echo "result=$(grep -c 'fail' playwright-results.txt)" >> $GITHUB_ENV
           #echo "Playwright tests result: ${{ env.result }}"
 
+      - name: Check for playwright-results.txt
+        run: |
+          ls -la playwright-results.txt || echo "File not found"
+
 
       - name: Upload test results artifact
         uses: actions/upload-artifact@v4
@@ -135,12 +139,6 @@ jobs:
       - name: Print artifact URL
         run: |
           echo "Artifact URL: ${{ env.ARTIFACT_URL }}"
-
-      #- name: Download test results
-      #  run: |
-      #    cd is373-devops
-      #    mkdir -p is373-devops/test-results
-      #    curl -L -o is373-devops/test-results/playwright-results.txt ${{ env.ARTIFACT_URL }}
 
       - name: Trigger download workflow
         run: |
