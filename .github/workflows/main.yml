@@ -160,7 +160,6 @@ jobs:
         if: always()
         run: |
           kill `cat hexo.pid`
-      
 
   deploy:
     runs-on: ubuntu-latest
