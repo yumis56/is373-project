@@ -144,7 +144,7 @@ jobs:
       #playwright end
       - name: Print artifact URL
         run: |
-          echo "Artifact URL: ${{ env.ARTIFACT_URL 
+          echo "Artifact URL: ${{ env.ARTIFACT_URL }}
 
       ## TODO newest attempt
       - name: Commit Playwright results to test-results branch
