@@ -1,6 +1,6 @@
 name: GitHub Actions Workflow
 
-on:
+on: 
   push:
     branches:
       - main   
