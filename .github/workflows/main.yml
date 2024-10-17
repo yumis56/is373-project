@@ -147,7 +147,7 @@ jobs:
         run: |
           if [ -f test-results/playwright-results.txt ]; then
             git checkout -b test-results
-            
+            git fetch origin
             #git pull --rebase origin test-results || true
             git add test-results/playwright-results.txt
             git commit -m "Save Playwright test results"
