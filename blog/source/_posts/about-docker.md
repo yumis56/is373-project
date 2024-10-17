@@ -3,7 +3,8 @@ title: About Docker
 ---
 # Docker
 ## What is Docker?
-<img src="/is373-project/images/docker-logo.png" alt="Docker Logo" width="200" />
+<img src="https://yumis56.github.io/is373-project/images/docker-logo.png" alt="Docker Logo" width="200" />
+
 Docker is a *containerization* platform.
 
   **Containerization**: The process of packaging source code into an executable container
