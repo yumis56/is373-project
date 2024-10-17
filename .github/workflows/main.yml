@@ -124,7 +124,7 @@ jobs:
 
       - name: Check for playwright-results.txt
         run: |
-          ls -la test-results/playwright-results.txt || echo "File not found"
+          ls -la playwright-results.txt || echo "File not found"
 
 
       - name: Upload test results artifact
@@ -159,6 +159,7 @@ jobs:
       #    fi
       ##
       
+      # TODO this does work, but stuck not finding artifact to download
       #- name: Trigger download workflow
       #  run: |
       #    curl -L \
