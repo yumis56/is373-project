@@ -28,7 +28,7 @@ Docker is a *containerization* platform.
   - Client can communicate to multiple daemons
 
 ### Why Docker?
-<img src="/images/docker-companies.png" alt="List of companies that use docker like Pintrest, Shopify, Twitter, etc." height="200" />
+<img src="https://yumis56.github.io/is373-project/images/docker-companies.png" alt="List of companies that use docker like Pintrest, Shopify, Twitter, etc." height="200" />
 Docker is an open-source tool that is compatible with GitHub features. While Kubernetes have greater scaling and is used for larger operations, Docker is ideal for personal use and for smaller companies and cloud infrastructures that prioritize portable workloads.
 
 ## How to Use Docker

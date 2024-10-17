@@ -4,7 +4,7 @@ title: Set Up Ubuntu
 # Ubuntu Set-Up Guide
 
 
-<img src="/images/ubuntu-logo.png" alt="Ubuntu Logo" width="150" />
+<img src="https://yumis56.github.io/is373-project/images/ubuntu-logo.png" alt="Ubuntu Logo" width="150" />
 
 ***
 
@@ -40,7 +40,7 @@ The final step for installing Ubuntu is running it on your machine and making su
 
 
 ## Virtual Box Set-Up (macOS and Windows)
-<img src="/images/virtualbox-logo.png" alt="VirtualBox Old Logo Logo" height="150" /> <img src="/images/virtualbox-logo-2024.png" alt="VirtualBox New 2024+ Logo" height="150" />
+<img src="https://yumis56.github.io/is373-project/images/virtualbox-logo.png" alt="VirtualBox Old Logo Logo" height="150" /> <img src="https://yumis56.github.io/is373-project/images/virtualbox-logo-2024.png" alt="VirtualBox New 2024+ Logo" height="150" />
 ### Initial Set-Up
 1. [Download Oracle Virtual Box](https://www.virtualbox.org/wiki/Downloads) for the machine you are currently using (e.g. MacBook would download the macOS package)
 2. [Download Ubuntu [22.04.5 LTS (Jammy Jellyfish)]](https://releases.ubuntu.com/jammy/)
@@ -50,13 +50,13 @@ The final step for installing Ubuntu is running it on your machine and making su
 ### Set Up Ubuntu in Virtual Box
 When you open your Oracle VM Virtual Box, it will look like this:
 
-![Screenshot of Oracle VM Virtual Box, with no Virtual Machines (VMs) yet](/images/blank-virtual-box.png)
+![Screenshot of Oracle VM Virtual Box, with no Virtual Machines (VMs) yet](https://yumis56.github.io/is373-project/images/blank-virtual-box.png)
 
 
 1. Click **'New'** to create a new Virtual Machine (VM)
 First, you will choose and name your VM.
 
-![Screenshot of Oracle VM Virtual Box new VM, first screen](/images/vm-setup-1.png)
+![Screenshot of Oracle VM Virtual Box new VM, first screen](https://yumis56.github.io/is373-project/images/vm-setup-1.png)
 
   - **Name**: This is where you add an identifiable name/nickname for your VM
   - **Folder/Machine Folder**: This is where you select your VM's location. You can choose any location that has enough space
@@ -68,14 +68,14 @@ First, you will choose and name your VM.
 
 2. a. You may or may not get get a "Unattended Guest OS Install Setup" screen
    
-![Screenshot of Oracle VM Virtual Box new VM, first screen](/images/vm-setup-2.png)
+![Screenshot of Oracle VM Virtual Box new VM, first screen](https://yumis56.github.io/is373-project/images/vm-setup-2.png)
 - If you get this screen, you may click **'Next'**
 - Note: by default, username is **"vboxuser"** and password is **"changeme"**
 
 2. b. Hardware / Memory Size
 A portion of your machine's resources will be dedicated to the VM.
 
-![Screenshot of Oracle VM Virtual Box Hardware setup page](/images/vm-setup-3.png)
+![Screenshot of Oracle VM Virtual Box Hardware setup page](https://yumis56.github.io/is373-project/images/vm-setup-3.png)
 - You may have different options depending on your machine
 - For allocating resources, choose the highest amount possible within the green "reccomendation" zone
   
@@ -87,7 +87,7 @@ A portion of your machine's resources will be dedicated to the VM.
 - If asked, leave default **'Dynamically allocated'** over **Fixed size**
 - Choose **30.00 GB** as the maximum amount of file data that the VM may store on the hard drive
 
-![Screenshot of Oracle VM Virtual Box new VM, first screen](/images/vm-setup-4.png)
+![Screenshot of Oracle VM Virtual Box new VM, first screen](https://yumis56.github.io/is373-project/images/vm-setup-4.png)
 
   Click **'Next'**
 
