@@ -107,10 +107,9 @@ jobs:
         run: |
           docker build -t playwright-tests .
 
-      #- name: Create test-results directory
-      #  run: |
-      #    mkdir -p test-results/
-      #    touch playwright-results.txt
+      - name: Create test-results directory
+        run: |
+          mkdir -p test-results/
       
       - name: Run Playwright tests in Docker
         id: playwright-tests
@@ -131,7 +130,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
             name: playwright-results
-            path: test-results/playwright-results.txt
+            path: playwright-results.txt
             if-no-files-found: warn
             compression-level: 6
             overwrite: false
@@ -150,7 +149,7 @@ jobs:
             git checkout -b test-results
             
             git pull origin test-results
-            git add test-results/playwright-results.txt
+            git add playwright-results.txt
             git commit -m "Save Playwright test results"
             
             git push origin test-results
