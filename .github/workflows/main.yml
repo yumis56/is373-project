@@ -110,7 +110,7 @@ jobs:
         id: playwright-tests
         run: |
           # This one is functioning, but I want to set conditionals
-          docker run --rm playwright-tests > playwright-results.txt || true
+          docker run --rm playwright-tests > test-results/playwright-results.txt || true
           
           #docker run --rm playwright-tests > playwright-results.txt
           #echo "result=$(grep -c 'fail' playwright-results.txt)" >> $GITHUB_ENV
@@ -118,14 +118,14 @@ jobs:
 
       - name: Check for playwright-results.txt
         run: |
-          ls -la playwright-results.txt || echo "File not found"
+          ls -la test-results/playwright-results.txt || echo "File not found"
 
 
       - name: Upload test results artifact
         uses: actions/upload-artifact@v4
         with:
             name: playwright-results
-            path: playwright-results.txt
+            path: test-results/playwright-results.txt
             if-no-files-found: warn
             compression-level: 6
             overwrite: false
