@@ -143,19 +143,19 @@ jobs:
       #playwright end
 
       ## TODO newest attempt
-      - name: Commit Playwright results to test-results branch
-        run: |
-          if [ -f test-results/playwright-results.txt ]; then
-            git checkout -b test-results
-            git fetch origin
-            #git pull --rebase origin test-results || true
-            git add test-results/playwright-results.txt
-            git commit -m "Save Playwright test results"
+      #- name: Commit Playwright results to test-results branch
+      #  run: |
+      #    if [ -f test-results/playwright-results.txt ]; then
+      #      git checkout -b test-results
+      #      git fetch origin
+      #      #git pull --rebase origin test-results || true
+      #      git add test-results/playwright-results.txt
+      #      git commit -m "Save Playwright test results"
             
-            git push origin test-results
-          else
-            echo "Playwright results file not found."
-          fi
+      #      git push origin test-results
+      #    else
+      #      echo "Playwright results file not found."
+      #    fi
       ##
       
       #- name: Trigger download workflow
