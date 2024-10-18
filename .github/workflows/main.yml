@@ -116,12 +116,21 @@ jobs:
       - name: Run Playwright tests in Docker
         id: playwright-tests
         run: |
-          # This one is functioning, but I want to set conditionals
           docker run --rm playwright-tests > playwright-results.txt ||  echo "Docker command failed"
 
-          #result=$(grep -c 'fail' playwright-results.txt)
-          #echo "result=$result" >> $GITHUB_OUTPUT
-          #echo "Playwright tests result: $result"
+          result=$(grep -c 'fail' playwright-results.txt)
+          if [ $? -ne 0 ]; then
+            result=0
+          fi
+      
+          echo "result=$result" >> $GITHUB_OUTPUT
+          echo "Playwright tests result: $result"
+      
+          if [ "$result" -eq 0 ]; then
+            echo "All tests passed."
+          else
+            echo "Some tests failed."
+          fi
 
 
       - name: Check for playwright-results.txt
