@@ -137,7 +137,7 @@ jobs:
             name: playwright-results
             path: playwright-results.txt
             if-no-files-found: warn
-            compression-level: 6
+            compression-level: 8
             overwrite: false
             include-hidden-files: false
 
