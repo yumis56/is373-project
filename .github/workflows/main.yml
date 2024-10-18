@@ -119,7 +119,7 @@ jobs:
           # This one is functioning, but I want to set conditionals
           docker run --rm playwright-tests > playwright-results.txt ||  echo "Docker command failed"
 
-          result=$(grep -c 'fail' playwright-results.txt || echo "0")
+          result=$(grep -c 'fail' playwright-results.txt)
           echo "result=$result" >> $GITHUB_OUTPUT
           echo "Playwright tests result: $result"
 
