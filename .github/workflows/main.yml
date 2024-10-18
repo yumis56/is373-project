@@ -118,7 +118,11 @@ jobs:
         run: |
           docker run --rm playwright-tests > playwright-results.txt || true
 
-          results=$(grep -c '✘' playwright-results.txt)
+          ls -la playwright-results.txt || echo "File not found"
+          results=$(grep -c '✘' playwright-results.txt || true)
+          if [ -z "$results" ]; then
+            results='0'
+          fi
   
           echo "result=$results" >> $GITHUB_OUTPUT
 
