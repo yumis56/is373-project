@@ -133,6 +133,8 @@ jobs:
         run: |
           ls -la playwright-results.txt || echo "File not found"
 
+      - name: Display Playwright test results
+        run: cat playwright-results.txt
 
       - name: Upload test results artifact
         uses: actions/upload-artifact@v4
