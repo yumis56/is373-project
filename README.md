@@ -1,3 +1,3 @@
 # is373-project
 
-This is the deployed website
+This repository is for deploying the static site with Hexo

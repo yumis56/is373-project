@@ -1,6 +1,9 @@
 name: GitHub Actions Workflow
 
-on:
+
+on: 
+  repository_dispatch:
+      types: [update_content]
   push:
     branches:
       - main   
@@ -8,35 +11,84 @@ on:
     branches:
       - main   
 
+permissions:
+    contents: write
+
 jobs:
+  verify-token:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check GitHub PAT
+          run: |
+            git config --global user.name "GitHub Action"
+            git config --global user.email "action@github.com"
+            RESPONSE=$(git ls-remote https://github.com/yumis56/is373-devops.git)
+            if [[ $? -eq 0 ]]; then
+              echo "PAT is valid."
+            else
+              echo "Invalid PAT."
+              exit 1
+            fi
+
+#######
+
   build-and-test:
+    needs: verify-token
+    if: success()
+  
     runs-on: ubuntu-latest
+    outputs:
+      test-results: ${{ steps.test-results.outputs.result }}
 
     steps:
-      
       - name: Checkout Hexo repository
         uses: actions/checkout@v4
 
-        
+        #import content start
+      - name: Checkout is373 repository
+        uses: actions/checkout@v4
+        with:
+          #token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: yumis56/is373
+          path: is373
+
+      - name: Copy markdown files and images
+        run: |
+          cp -R is373/*.md ./blog/source/_posts/
+          cp -R is373/images/* ./blog/source/images/
+
+      - name: Commit and push changes
+        run: |
+          cd blog
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git pull origin main
+          
+          git add .
+          git commit -m "Update md and images from is373 to is373-project" || echo "No changes to commit"
+          git push origin main
+         #import content end
+
+
+    #hexo start
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-  
+
       - name: Install dependencies
         working-directory: ./blog
         run: |
             npm install
             npm ci
 
-
       - name: Generate Hexo site
         working-directory: ./blog
         run: |
             npx hexo clean
             npx hexo generate
-
     
       - name: Start Hexo server
         working-directory: ./blog
@@ -45,40 +97,88 @@ jobs:
           echo $! > hexo.pid
           sleep 5  # Give the server a moment to start
           echo "Hexo server started"
-  
-      #- name: Wait for Hexo server to start
-        #working-directory: ./blog
-        #run: |
-          #npx wait-on http://localhost:4000/is373-project/
+      #hexo end    besides closing server after playwright
 
-    
+      #playwright start
       - name: Checkout Playwright test repository
         uses: actions/checkout@v4
         with:
           repository: yumis56/is373-devops
           path: is373-devops
 
-   
-      - name: Install Playwright dependencies
+      - name: Build Docker image for Playwright tests
         working-directory: is373-devops
         run: |
-          npx playwright install-deps
-          npm ci
-        
-      - name: Install Playwright browsers
-        working-directory: is373-devops
-        run: npx playwright install
+          docker build -t playwright-tests .
 
-      - name: Run Playwright tests
-        working-directory: is373-devops
-        #run: npx playwright test --config=playwright.config.ts
-        run: npx playwright test --config=playwright.config.ts --reporter=json > playwright-results.json || true
+      #- name: Create test-results directory
+      #  run: |
+      #    mkdir -p test-results/
       
-      - name: Upload test results
+      - name: Run Playwright tests in Docker
+        id: test-results
+        run: |
+          docker run --rm playwright-tests > playwright-results.txt || true
+
+          ls -la playwright-results.txt || echo "File not found"
+          results=$(grep -c '✘' playwright-results.txt || true)
+          if [ -z "$results" ]; then
+            results='0'
+          fi
+  
+          echo "result=$results" >> $GITHUB_OUTPUT
+
+
+      - name: Check for playwright-results.txt
+        run: |
+          ls -la playwright-results.txt || echo "File not found"
+
+      - name: Display Playwright test results
+        run: cat playwright-results.txt
+
+      - name: Upload test results artifact
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-results
-          path: is373-devops/playwright-results.json
+            name: playwright-results
+            path: playwright-results.txt
+            if-no-files-found: warn
+            compression-level: 8
+            overwrite: false
+            include-hidden-files: false
+
+      #- name: Save artifact URL
+      #  run: |
+      #    echo "ARTIFACT_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-artifact.outputs.artifact_id }}" >> $GITHUB_ENV
+
+
+      #playwright end
+
+      ## TODO newest attempt
+      #- name: Commit Playwright results to test-results branch
+      #  run: |
+      #    if [ -f test-results/playwright-results.txt ]; then
+      #      git checkout -b test-results
+      #      git fetch origin
+      #      #git pull --rebase origin test-results || true
+      #      git add test-results/playwright-results.txt
+      #      git commit -m "Save Playwright test results"
+            
+      #      git push origin test-results
+      #    else
+      #      echo "Playwright results file not found."
+      #    fi
+      ##
+      
+      # TODO this does work, but stuck not finding artifact to download
+      #- name: Trigger download workflow
+      #  run: |
+      #    curl -L \
+      #      -X POST \
+      #      -H "Accept: application/vnd.github+json" \
+      #      -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" \
+      #      -H "X-GitHub-Api-Version: 2022-11-28" \
+      #      https://api.github.com/repos/yumis56/is373-devops/dispatches \
+      #      -d '{"event_type":"download_artifact","client_payload":{}}'
      
       - name: Stop Hexo server
         working-directory: ./blog
@@ -86,11 +186,10 @@ jobs:
         run: |
           kill `cat hexo.pid`
 
-
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-test
-    if: github.event_name == 'push'
+    if: success() && needs.build-and-test.outputs.test-results == '0'
 
     steps:
       - name: Checkout Hexo repository
@@ -114,9 +213,6 @@ jobs:
         run: |
             npx hexo clean
             npx hexo generate
-        
-      #- name: List contents of publish directory
-      #  run: ls -la ./blog/public 
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
