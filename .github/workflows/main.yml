@@ -2,6 +2,8 @@ name: GitHub Actions Workflow
 
 
 on: 
+  repository_dispatch:
+      types: [update_content]
   push:
     branches:
       - main   
